@@ -6,11 +6,23 @@ body {
 
 h1,
 h2,
-h3,
 h4,
 h5,
 h6 {
     font-family: $font-title;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-family: $font-subtile;
+}
+
+h4 {
+    font-size: 1.5rem;
 }
 
 ul {
@@ -36,8 +48,17 @@ svg {
     height: 1.25rem;
 }
 
+img {
+    max-width: 100%;
+}
+
 .flex {
     display: flex;
+}
+
+.grid {
+    display: grid;
+    gap: 1rem;
 }
 
 .items-center {
@@ -54,6 +75,10 @@ svg {
 
 .absolute {
     position: absolute;
+}
+
+.shadow-atropos {
+    box-shadow: var(--shadow-color) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 
 .fixed {
@@ -93,6 +118,7 @@ svg {
     width: 90%;
     max-width: 1280px;
     margin: 0 auto;
+    padding: 3rem 0;
 }
 
 .flex-wrap {
@@ -133,6 +159,18 @@ svg {
     border-radius: .5rem;
     border: 1px solid rgba(0, 0, 0, 0.3);
 
+}
+
+.text-center {
+    text-align: center;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.subtitle {
+    color: var(--primary-color);
 }
 
 .flex-col-sm {

@@ -101,12 +101,27 @@ document.addEventListener("astro:page-load", () => {
   window.addEventListener("resize", () => {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(() => {
-      heroStart();
+      // heroStart();
     }, 250);
   });
 
-  const myAtropos = Atropos({
-    el: ".my-atropos",
-    // rest of parameters
+  const atroposElements = document.querySelectorAll(".my-atropos");
+
+  atroposElements.forEach((element) => {
+    Atropos({
+      el: element,
+      activeOffset: 40,
+      shadowScale: 0,
+      onEnter() {
+        element.querySelector(".atropos-inner").classList.remove("shadow");
+        element.querySelector(".atropos-inner").classList.add("shadow-atropos");
+      },
+      onLeave() {
+        element.querySelector(".atropos-inner").classList.add("shadow");
+        element
+          .querySelector(".atropos-inner")
+          .classList.remove("shadow-atropos");
+      },
+    });
   });
 });

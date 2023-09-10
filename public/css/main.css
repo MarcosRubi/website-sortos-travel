@@ -98,6 +98,7 @@
   --bg-color-hover: rgb(41 51 65);
   --always-white: #fff;
   --text-color: #fff;
+  --shadow-color: rgba(210, 210, 210, 0.2);
 }
 
 [data-theme=light] {
@@ -109,6 +110,7 @@
   --bg-color-hover: #ddd;
   --always-white: #fff;
   --text-color: #000;
+  --shadow-color: rgba(100, 100, 111, 0.2);
 }
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
@@ -458,11 +460,23 @@ body {
 
 h1,
 h2,
-h3,
 h4,
 h5,
 h6 {
   font-family: "Poppins", sans-serif;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-family: "Allura", cursive;
+}
+
+h4 {
+  font-size: 1.5rem;
 }
 
 ul {
@@ -487,8 +501,17 @@ svg {
   height: 1.25rem;
 }
 
+img {
+  max-width: 100%;
+}
+
 .flex {
   display: flex;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
 }
 
 .items-center {
@@ -505,6 +528,10 @@ svg {
 
 .absolute {
   position: absolute;
+}
+
+.shadow-atropos {
+  box-shadow: var(--shadow-color) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 
 .fixed {
@@ -543,6 +570,7 @@ svg {
   width: 90%;
   max-width: 1280px;
   margin: 0 auto;
+  padding: 3rem 0;
 }
 
 .flex-wrap {
@@ -582,6 +610,18 @@ svg {
   background: none;
   border-radius: 0.5rem;
   border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.subtitle {
+  color: var(--primary-color);
 }
 
 .flex-col-sm {
@@ -624,13 +664,14 @@ svg {
   border-radius: 0.5rem;
   background: none;
   border: none;
+  color: var(--text-color);
 }
 .main-header .menu__button svg {
   width: 1.25rem;
   height: 1.25rem;
 }
 .main-header .menu__items {
-  top: 82px;
+  top: 80px;
   left: 50%;
   transform: translateX(-50%);
   background-color: var(--bg-color);
@@ -743,6 +784,10 @@ svg {
     border: none;
     width: 100%;
   }
+  .main-header .menu__items > ul a,
+  .main-header .menu__items > ul button {
+    padding: 1rem 1.25rem;
+  }
   .main-header .menu__items > ul a.active,
   .main-header .menu__items > ul button.active {
     color: var(--primary-color);
@@ -846,6 +891,34 @@ svg {
   transform: translate(-50%, -50%);
   color: #fff;
 }
+
+.why-ous .grid {
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  gap: 2rem;
+}
+.why-ous .atropos-inner.shadow {
+  box-shadow: var(--shadow-color) 0px 7px 29px 0px;
+}
+.why-ous .card {
+  position: relative;
+  max-width: 500px;
+  cursor: pointer;
+  color: var(--secondary-color);
+}
+.why-ous .card__icon {
+  position: absolute;
+  max-width: 3rem;
+  border-radius: 50%;
+  left: 50%;
+  padding: 1rem;
+  margin: 0 auto;
+  transform: translate(-50%, -70%);
+  background-color: #fff;
+}
+.why-ous .card__content {
+  padding: 1rem;
+}
+
 @media (min-width: 768px) {
   .hero img.bg-main {
     object-fit: unset;

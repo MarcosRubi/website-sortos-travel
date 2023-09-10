@@ -1,4 +1,4 @@
-$font-hero: 'Allura', cursive;
+$font-subtile: 'Allura', cursive;
 $font-title: 'Poppins', sans-serif;
 
 [data-theme=dark] {
@@ -10,6 +10,7 @@ $font-title: 'Poppins', sans-serif;
     --bg-color-hover: rgb(41 51 65);
     --always-white: #fff;
     --text-color: #fff;
+    --shadow-color: rgba(210, 210, 210, 0.2);
 }
 
 [data-theme=light] {
@@ -21,4 +22,5 @@ $font-title: 'Poppins', sans-serif;
     --bg-color-hover: #ddd;
     --always-white: #fff;
     --text-color: #000;
+    --shadow-color: rgba(100, 100, 111, 0.2);
 }
