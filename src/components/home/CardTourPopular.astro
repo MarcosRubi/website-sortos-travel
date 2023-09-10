@@ -1,0 +1,217 @@
+---
+interface Props {
+  imgUrl: string;
+  country: string;
+  valoration: number;
+  days: number;
+  typeTour: string;
+  age: number;
+  price: number;
+  description: string;
+  url: string;
+}
+
+const {
+  imgUrl,
+  country,
+  valoration,
+  days,
+  typeTour,
+  age,
+  price,
+  description,
+  url,
+} = Astro.props;
+---
+
+<div class="card">
+  <a href={url} class="card__header relative">
+    <div class="overflow-hidden">
+      <img src={imgUrl} alt="" class="flex" />
+    </div>
+    <div class="absolute card__header__footer">
+      <p>{country}</p>
+      <div class="flex items-center">
+        <div class="flex items-center stars">
+          {
+            valoration > 0 && (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-star max-w-[20px]"
+              >
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+              </svg>
+            )
+          }
+          {
+            valoration > 1 && (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-star max-w-[20px]"
+              >
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+              </svg>
+            )
+          }
+          {
+            valoration > 2 && (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-star max-w-[20px]"
+              >
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+              </svg>
+            )
+          }
+          {
+            valoration > 3 && (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-star max-w-[20px]"
+              >
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+              </svg>
+            )
+          }
+          {
+            valoration > 4 && (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-star max-w-[20px]"
+              >
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+              </svg>
+            )
+          }
+        </div>
+        <span>({valoration}.0 Valoración)</span>
+      </div>
+    </div>
+  </a>
+  <div class="card__body">
+    <ul class="flex items-center justify-between">
+      <li class="flex items-center justify-center">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="feather feather-clock stroke-green-500"
+          ><circle cx="12" cy="12" r="10"></circle><polyline
+            points="12 6 12 12 16 14"></polyline></svg
+        >
+        <span>{days} Días</span>
+      </li>
+      <li class="flex items-center justify-center">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="feather feather-user stroke-green-500"
+          ><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle
+            cx="12"
+            cy="7"
+            r="4"></circle></svg
+        >
+        <span>{typeTour}</span>
+      </li>
+      <li class="flex items-center justify-center">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="feather feather-info stroke-green-500"
+          ><circle cx="12" cy="12" r="10"></circle><line
+            x1="12"
+            y1="16"
+            x2="12"
+            y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg
+        >
+        <span>{age}+ Edad</span>
+      </li>
+    </ul>
+    <div class="p-1 flex flex-col items-center">
+      <div class="flex items-center price">
+        <p>$ {price} USD</p>
+        <span>/Persona</span>
+      </div>
+      <p class="text-center description">
+        {description}
+      </p>
+      <a href={url} class="flex items-center btn btn-primary inline-flex"
+        ><span>Más información</span>
+        <svg
+          class="w-3.5 h-3.5 ml-2"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 14 10"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M1 5h12m0 0L9 1m4 4L9 9"></path>
+        </svg></a
+      >
+    </div>
+  </div>
+</div>

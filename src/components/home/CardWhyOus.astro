@@ -1,0 +1,29 @@
+---
+interface Props {
+  title: string;
+  iconUrl: string;
+  imgUrl: string;
+}
+
+const { title, iconUrl, imgUrl } = Astro.props;
+---
+
+<div class="atropos my-atropos">
+  <div class="atropos-scale">
+    <div class="atropos-rotate">
+      <div class="atropos-inner shadow">
+        <div class="card">
+          <div class="card__img">
+            <img src={imgUrl} alt="" />
+          </div>
+          <div class="card__content text-center" data-atropos-offset="5">
+            <div class="card__icon">
+              <img src={iconUrl} alt="" />
+            </div>
+            <h4>{title}</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

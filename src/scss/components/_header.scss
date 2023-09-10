@@ -50,12 +50,12 @@
             &.show {
                 opacity: 1;
                 pointer-events: initial;
-                width: 101%;
+                width: 100vw;
             }
 
             >ul {
                 z-index: 99;
-                padding: 1rem;
+                padding: 1rem 0;
 
                 a,
                 button {
@@ -86,8 +86,9 @@
             position: absolute;
             opacity: 0;
             pointer-events: none;
-            background-color: var(--bg-color-hover);
+            background-color: var(--bg-color);
             width: auto;
+            box-shadow: var(--shadow-color) 0px 3px 8px;
 
             div {
                 border-bottom: 1px solid var(--primary-color);
@@ -166,6 +167,10 @@
                 pointer-events: initial;
                 background: none;
 
+                &.show {
+                    width: initial;
+                }
+
                 >ul {
                     padding: 0;
                     margin-top: 0;
@@ -174,7 +179,7 @@
 
                     a,
                     button {
-                        padding: 1rem 1.25rem;
+                        padding: .5rem 1.25rem;
 
                         &.active {
                             color: var(--primary-color);
@@ -193,11 +198,11 @@
             }
 
             .dropdown-menu {
-                width: 75%;
                 overflow: hidden;
                 border-radius: 0.5rem;
                 transform: translateY(1rem);
                 transition: transform 0.3s ease, opacity 0.3s ease-in-out;
+                padding: .5rem 0;
 
                 &.show {
                     transform: translateY(0);

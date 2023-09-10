@@ -96,32 +96,32 @@ document.addEventListener("astro:page-load", () => {
   heroStart();
   updateIconDarkTheme();
 
-  let resizeTimer;
-
-  window.addEventListener("resize", () => {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(() => {
-      // heroStart();
-    }, 250);
-  });
-
   const atroposElements = document.querySelectorAll(".my-atropos");
 
-  atroposElements.forEach((element) => {
-    Atropos({
-      el: element,
-      activeOffset: 40,
-      shadowScale: 0,
-      onEnter() {
-        element.querySelector(".atropos-inner").classList.remove("shadow");
-        element.querySelector(".atropos-inner").classList.add("shadow-atropos");
-      },
-      onLeave() {
-        element.querySelector(".atropos-inner").classList.add("shadow");
-        element
-          .querySelector(".atropos-inner")
-          .classList.remove("shadow-atropos");
-      },
-    });
-  });
+  function initAtropos() {
+    if (window.innerWidth > 1024) {
+      atroposElements.forEach((element) => {
+        Atropos({
+          el: element,
+          activeOffset: 40,
+          shadowScale: 0,
+          onEnter() {
+            element.querySelector(".atropos-inner").classList.remove("shadow");
+            element
+              .querySelector(".atropos-inner")
+              .classList.add("shadow-atropos");
+          },
+          onLeave() {
+            element.querySelector(".atropos-inner").classList.add("shadow");
+            element
+              .querySelector(".atropos-inner")
+              .classList.remove("shadow-atropos");
+          },
+        });
+      });
+    }
+  }
+
+  initAtropos();
+  window.addEventListener("resize", initAtropos);
 });

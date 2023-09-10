@@ -1,0 +1,15 @@
+---
+interface Props {
+  title: string;
+  subtitle: string;
+  isTitleFirst: boolean;
+}
+
+const { title, subtitle, isTitleFirst } = Astro.props;
+---
+
+<header class="text-center">
+  {isTitleFirst && <h2 class="title uppercase">{title}</h2>}
+  <h3 class="subtitle">{subtitle}</h3>
+  {!isTitleFirst && <h2 class="title uppercase">{title}</h2>}
+</header>

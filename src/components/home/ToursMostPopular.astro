@@ -1,0 +1,49 @@
+---
+import HeaderSections from "../HeaderSections.astro";
+import CardTourPopular from "./CardTourPopular.astro";
+---
+
+<section class="tours">
+  <div class="container">
+    <HeaderSections
+      title="Tours más populares"
+      subtitle="Viaja lo más lejos, encuéntrate a tí mismo"
+      isTitleFirst={false}
+    />
+    <div class="grid mt-1 justify-center">
+      <CardTourPopular
+        imgUrl="https://assets.website-files.com/62b01487555313ceec71f525/62c68fb17979bb5d1ed91569_water-3161063_1920%20(1)-p-1080.jpeg"
+        country="Zúrich, Suiza"
+        valoration={4}
+        days={6}
+        typeTour="Familiar"
+        age={14}
+        price={900}
+        description="¡Nuestros viajes son diferentes de todos los demás! Amamos nuestro negocio y queremos ver clientes felices, ¡así que siempre hacemos todo lo posible para su comodidad!"
+        url="#"
+      />
+      <CardTourPopular
+        imgUrl="https://assets.website-files.com/62b01487555313ceec71f525/62b592ec9b231ccf93b0daf5_africa-2259939_640-p-500.jpeg"
+        country="Playa Brittany Canoe, Madagascar"
+        valoration={5}
+        days={12}
+        typeTour="Exótico"
+        age={21}
+        price={870}
+        description="¡Nuestros viajes son diferentes de todos los demás! Amamos nuestro negocio y queremos ver clientes felices, ¡así que siempre hacemos todo lo posible para su comodidad!"
+        url="#"
+      />
+      <CardTourPopular
+        imgUrl="https://assets.website-files.com/62b01487555313ceec71f525/62b5900a9b231c319bb0d243_venice-3183168_640-p-500.jpeg"
+        country="Venecia, Hermoso Gran Canal, Italia"
+        valoration={4}
+        days={9}
+        typeTour="Romántico"
+        age={18}
+        price={800}
+        description="¡Nuestros viajes son diferentes de todos los demás! Amamos nuestro negocio y queremos ver clientes felices, ¡así que siempre hacemos todo lo posible para su comodidad!"
+        url="#"
+      />
+    </div>
+  </div>
+</section>

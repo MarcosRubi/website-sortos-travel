@@ -522,6 +522,10 @@ img {
   justify-content: center;
 }
 
+.justify-around {
+  justify-content: space-around;
+}
+
 .justify-between {
   justify-content: space-between;
 }
@@ -530,7 +534,7 @@ img {
   position: absolute;
 }
 
-.shadow-atropos {
+.shadow-atropos, .tours .card:hover {
   box-shadow: var(--shadow-color) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 
@@ -568,7 +572,7 @@ img {
 
 .container {
   width: 90%;
-  max-width: 1280px;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 3rem 0;
 }
@@ -605,11 +609,31 @@ img {
   display: none;
 }
 
+.overflow-hidden {
+  overflow: hidden;
+}
+
 .btn {
   padding: 0.5rem 0.65rem;
   background: none;
   border-radius: 0.5rem;
   border: 1px solid rgba(0, 0, 0, 0.3);
+  color: var(--text-color);
+}
+
+.btn-primary {
+  background: linear-gradient(to left, var(--primary-color-hover), var(--primary-color));
+  padding: 1rem 1.5rem;
+  color: var(--always-white);
+  border: none;
+  transition: transform 0.1s ease-in-out;
+}
+.btn-primary:hover {
+  transform: scale(1.1);
+  background: linear-gradient(to left, var(--primary-color), var(--primary-color));
+}
+.btn-primary svg {
+  padding-left: 0.5rem;
 }
 
 .text-center {
@@ -620,21 +644,36 @@ img {
   text-transform: uppercase;
 }
 
+.title {
+  margin: 0;
+}
+
 .subtitle {
   color: var(--primary-color);
+  margin: 0;
 }
 
 .flex-col-sm {
   flex-direction: column;
 }
 
-.shadow {
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+.shadow, .btn-primary:hover {
+  box-shadow: var(--shadow-color) 1.95px 1.95px 2.6px;
+}
+
+.relative {
+  position: relative;
 }
 
 @media (min-width: 768px) {
   .flex-col-sm {
     flex-direction: row;
+  }
+  h2 {
+    font-size: 3rem;
+  }
+  h3 {
+    font-size: 1.75rem;
   }
 }
 .main-header {
@@ -684,11 +723,11 @@ img {
 .main-header .menu__items.show {
   opacity: 1;
   pointer-events: initial;
-  width: 101%;
+  width: 100vw;
 }
 .main-header .menu__items > ul {
   z-index: 99;
-  padding: 1rem;
+  padding: 1rem 0;
 }
 .main-header .menu__items > ul a,
 .main-header .menu__items > ul button {
@@ -714,8 +753,9 @@ img {
   position: absolute;
   opacity: 0;
   pointer-events: none;
-  background-color: var(--bg-color-hover);
+  background-color: var(--bg-color);
   width: auto;
+  box-shadow: var(--shadow-color) 0px 3px 8px;
 }
 .main-header .menu .dropdown-menu div {
   border-bottom: 1px solid var(--primary-color);
@@ -778,6 +818,9 @@ img {
     pointer-events: initial;
     background: none;
   }
+  .main-header .menu__items.show {
+    width: initial;
+  }
   .main-header .menu__items > ul {
     padding: 0;
     margin-top: 0;
@@ -786,7 +829,7 @@ img {
   }
   .main-header .menu__items > ul a,
   .main-header .menu__items > ul button {
-    padding: 1rem 1.25rem;
+    padding: 0.5rem 1.25rem;
   }
   .main-header .menu__items > ul a.active,
   .main-header .menu__items > ul button.active {
@@ -801,11 +844,11 @@ img {
     padding: 0;
   }
   .main-header .menu .dropdown-menu {
-    width: 75%;
     overflow: hidden;
     border-radius: 0.5rem;
     transform: translateY(1rem);
     transition: transform 0.3s ease, opacity 0.3s ease-in-out;
+    padding: 0.5rem 0;
   }
   .main-header .menu .dropdown-menu.show {
     transform: translateY(0);
@@ -818,7 +861,6 @@ img {
   min-height: calc(100vh - 80px);
   margin-top: 80px;
   overflow: hidden;
-  position: relative;
 }
 .hero img,
 .hero .text {
@@ -896,8 +938,9 @@ img {
   grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
   gap: 2rem;
 }
-.why-ous .atropos-inner.shadow {
+.why-ous .atropos-inner.shadow, .why-ous .atropos-inner.btn-primary:hover {
   box-shadow: var(--shadow-color) 0px 7px 29px 0px;
+  transition: all 0.3s;
 }
 .why-ous .card {
   position: relative;
@@ -919,12 +962,84 @@ img {
   padding: 1rem;
 }
 
+.tours .grid {
+  grid-template-columns: repeat(auto-fill, minmax(23rem, 1fr));
+}
+.tours .card {
+  box-shadow: var(--shadow-color) 0px 7px 29px 0px;
+  transition: all 0.3s ease-in-out;
+}
+.tours .card:hover {
+  transform: translateY(-0.75rem);
+}
+.tours .card__header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 18%, rgba(0, 0, 0, 0) 100%);
+}
+.tours .card__header:hover img {
+  transform: scale(1.25);
+}
+.tours .card__header img {
+  transition: transform 0.3s ease-in-out;
+}
+.tours .card__header__footer {
+  bottom: 1rem;
+  left: 1rem;
+  color: var(--always-white);
+  pointer-events: none;
+  z-index: 10;
+}
+.tours .card__header__footer p {
+  font-weight: bold;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+.tours .card__header__footer svg {
+  fill: var(--secondary-color);
+  stroke: var(--secondary-color);
+}
+.tours .card__header__footer .stars {
+  margin-right: 0.5rem;
+}
+.tours .card__body ul {
+  margin: 0;
+}
+.tours .card__body li {
+  padding: 1rem;
+  flex-grow: 1;
+  border-bottom: 1px solid var(--secondary-color);
+}
+.tours .card__body li:not(:last-child) {
+  border-right: 1px solid var(--secondary-color);
+}
+.tours .card__body li span {
+  margin-left: 0.25rem;
+}
+.tours .card__body .price p {
+  color: var(--primary-color);
+  font-size: 1.75rem;
+  margin: 0;
+  font-weight: 900;
+}
+.tours .card__body .price span {
+  font-weight: 300;
+  margin-left: 0.25rem;
+}
+.tours .card__body .description {
+  line-height: 1.5;
+}
+
 @media (min-width: 768px) {
   .hero img.bg-main {
     object-fit: unset;
   }
   .hero img.bg-mid {
-    top: 75%;
+    top: 85%;
   }
   .hero .text {
     font-size: 3rem;
@@ -936,6 +1051,7 @@ img {
   }
   .hero img.bg-mid {
     left: 73%;
+    top: 83%;
   }
   .hero .text {
     font-size: 4rem;
@@ -944,6 +1060,9 @@ img {
   }
 }
 @media (min-width: 1024px) {
+  .hero img.bg-mid {
+    top: 75%;
+  }
   .hero .text {
     font-size: 4rem;
     line-height: 10rem;

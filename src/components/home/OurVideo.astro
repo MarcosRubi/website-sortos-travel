@@ -1,0 +1,17 @@
+---
+import HeaderSections from "../HeaderSections.astro";
+---
+
+<section class="our-video">
+  <div class="container">
+    <HeaderSections
+      title="Mira nuestro video"
+      subtitle="Descubre todo en lo que te podemos ayudar"
+      isTitleFirst={true}
+    />
+    <video class="w-full overflow-hidden shadow-atropos mt-1" controls>
+      <source src="/video/servicios-de-la-agencia.mp4" type="video/mp4" />
+       Tu navegador no soporta ver videos.
+    </video>
+  </div>
+</section>
