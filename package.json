@@ -1,0 +1,16 @@
+{
+  "name": "sortos-travel-website-scss",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "watch-css": "sass --watch src/scss/main.scss public/css/main.css"
+  },
+  "dependencies": {
+    "astro": "^3.0.7"
+  }
+}

@@ -1,0 +1,43 @@
+---
+import Header from "./Header.astro";
+import Footer from "./Footer.astro";
+import { ViewTransitions } from "astro:transitions";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es" data-theme="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Allura&family=Poppins:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/main.css" />
+    <script
+      src="https://kit.fontawesome.com/87b8bff04b.js"
+      crossorigin="anonymous"></script>
+    <ViewTransitions />
+  </head>
+  <body>
+    <Header />
+    <slot />
+    <Footer />
+    <script
+      src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"
+      is:inline></script>
+    <script src="/js/atropos.min.js" is:inline></script>
+    <script src="/js/main.js" is:inline></script>
+  </body>
+</html>

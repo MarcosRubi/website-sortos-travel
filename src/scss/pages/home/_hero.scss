@@ -1,0 +1,125 @@
+.hero {
+    min-height: calc(100vh - 80px);
+    margin-top: 80px;
+    overflow: hidden;
+    position: relative;
+
+    img,
+    .text {
+        position: absolute;
+        transition: 0.45s cubic-bezier(.2, .49, .32, .99);
+    }
+
+    img {
+        pointer-events: none;
+    }
+
+    img.bg-main {
+        object-fit: cover;
+        height: 105%;
+        min-width: 110%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    img.bg-front {
+        left: 50%;
+        min-width: 110%;
+        height: 25%;
+        top: 90%;
+        transform: translate(-50%, -50%);
+        z-index: 7;
+    }
+
+    img.fog-1 {
+        min-width: 100%;
+        left: 25%;
+        top: 60%;
+        transform: translate(-50%, -50%);
+        z-index: 3;
+    }
+
+    img.bg-mid {
+        z-index: 6;
+        left: 27%;
+        top: 80%;
+        transform: translate(-50%, -50%);
+    }
+
+    img.bg-right {
+        left: 92%;
+        top: 85%;
+        transform: translate(-50%, -50%);
+        z-index: 6;
+    }
+
+    img.fog-3 {
+        left: 50%;
+        min-width: 130%;
+        bottom: -60%;
+        z-index: 5;
+        transform: translate(-50%, -50%);
+    }
+
+    img.fog-2 {
+        transform: translate(-50%, -50%);
+        bottom: -60%;
+        min-width: 110%;
+        left: 50%;
+        z-index: 8;
+    }
+
+    .text {
+        z-index: 1;
+        width: 100%;
+        text-align: center;
+        left: 50%;
+        top: 44%;
+        text-transform: uppercase;
+        position: absolute;
+        font-size: 1.5rem;
+        transform: translate(-50%, -50%);
+        color: #fff;
+    }
+
+    @media (min-width: 768px) {
+        img.bg-main {
+            object-fit: unset;
+        }
+
+        img.bg-mid {
+            top: 75%;
+        }
+
+        .text {
+            font-size: 3rem;
+        }
+    }
+
+    @media (min-width: 900px) {
+        img.bg-front {
+            height: initial;
+        }
+
+        img.bg-mid {
+            left: 73%;
+        }
+
+        .text {
+            font-size: 4rem;
+            line-height: 7rem;
+            top: 30%;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .text {
+            font-size: 4rem;
+            line-height: 10rem;
+            top: 40%;
+        }
+    }
+}

@@ -1,0 +1,24 @@
+$font-hero: 'Allura', cursive;
+$font-title: 'Poppins', sans-serif;
+
+[data-theme=dark] {
+    --primary-color: #00CC66;
+    --primary-color-hover: #009939;
+    --secondary-color: #C57C00;
+    --secondary-color-hover: #f7a31d;
+    --bg-color: rgb(31 41 55);
+    --bg-color-hover: rgb(41 51 65);
+    --always-white: #fff;
+    --text-color: #fff;
+}
+
+[data-theme=light] {
+    --primary-color: #009939;
+    --primary-color-hover: #00CC66;
+    --secondary-color: #f7a31d;
+    --secondary-color-hover: #C57C00;
+    --bg-color: #f7f7f7;
+    --bg-color-hover: #ddd;
+    --always-white: #fff;
+    --text-color: #000;
+}
