@@ -1,15 +1,15 @@
 ---
 import Logo from "../components/header/Logo.astro";
 import Menu from "../components/header/Menu.astro";
-import Buttons from "../components/header/Buttons.astro";
+import Buttons from "../components/header/Buttons.jsx";
 ---
 
-<header class="main-header fixed top-0 left-0 w-full shadow">
+<header class="main-header fixed top-0 left-0 w-full shadow" transition:persist>
   <div
     class="container relative flex flex-wrap items-center justify-between p-1 w-full"
   >
     <Logo />
     <Menu />
-    <Buttons />
+    <Buttons client:only />
   </div>
 </header>

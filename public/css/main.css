@@ -505,6 +505,22 @@ img {
   max-width: 100%;
 }
 
+input {
+  max-width: 100%;
+  height: 48px;
+  padding-left: 1rem;
+  outline: none;
+  border: none;
+}
+
+main {
+  margin-top: 80px;
+}
+
+::placeholder {
+  color: #555;
+}
+
 .flex {
   display: flex;
 }
@@ -657,7 +673,7 @@ img {
   flex-direction: column;
 }
 
-.shadow, .btn-primary:hover {
+.shadow, .newsletter input[type=submit]:hover, .btn-primary:hover {
   box-shadow: var(--shadow-color) 1.95px 1.95px 2.6px;
 }
 
@@ -784,11 +800,10 @@ img {
 .main-header #icon-moon,
 .main-header #icon-sun {
   stroke: var(--primary-color);
-  display: none;
 }
-.main-header #icon-moon.show,
-.main-header #icon-sun.show {
-  display: block;
+.main-header #icon-moon.hide,
+.main-header #icon-sun.hide {
+  display: none;
 }
 .main-header .buttons button:first-child {
   padding: 0.6rem 0.65rem;
@@ -859,7 +874,6 @@ img {
 }
 .hero {
   min-height: calc(100vh - 80px);
-  margin-top: 80px;
   overflow: hidden;
 }
 .hero img,
@@ -922,23 +936,27 @@ img {
   z-index: 8;
 }
 .hero .text {
-  z-index: 1;
+  z-index: 10;
   width: 100%;
   text-align: center;
   left: 50%;
-  top: 44%;
+  top: 40%;
   text-transform: uppercase;
   position: absolute;
-  font-size: 1.5rem;
+  font-size: 0.9rem;
   transform: translate(-50%, -50%);
-  color: #fff;
+  color: var(--always-white);
+  text-shadow: 2px 5px 10px #000;
+}
+.hero .text span {
+  color: var(--secondary-color);
 }
 
 .why-ous .grid {
-  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(21rem, 1fr));
   gap: 2rem;
 }
-.why-ous .atropos-inner.shadow, .why-ous .atropos-inner.btn-primary:hover {
+.why-ous .atropos-inner.shadow, .why-ous .newsletter input.atropos-inner[type=submit]:hover, .newsletter .why-ous input.atropos-inner[type=submit]:hover, .why-ous .atropos-inner.btn-primary:hover {
   box-shadow: var(--shadow-color) 0px 7px 29px 0px;
   transition: all 0.3s;
 }
@@ -963,7 +981,8 @@ img {
 }
 
 .tours .grid {
-  grid-template-columns: repeat(auto-fill, minmax(23rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
+  gap: 2rem;
 }
 .tours .card {
   box-shadow: var(--shadow-color) 0px 7px 29px 0px;
@@ -986,6 +1005,7 @@ img {
 }
 .tours .card__header img {
   transition: transform 0.3s ease-in-out;
+  object-fit: cover;
 }
 .tours .card__header__footer {
   bottom: 1rem;
@@ -1008,6 +1028,7 @@ img {
 }
 .tours .card__body ul {
   margin: 0;
+  font-size: 0.9rem;
 }
 .tours .card__body li {
   padding: 1rem;
@@ -1034,6 +1055,44 @@ img {
   line-height: 1.5;
 }
 
+.newsletter {
+  padding: 6rem 0;
+  background: url("https://assets.website-files.com/62b01487555313003b71f4f1/62b1dcd838a6a72c8af9159e_gaetano-cessati-mlGM03fKONE-unsplash%20(1)%20(1)%20(1)%20(1).jpg");
+}
+.newsletter .gradient::after {
+  content: "";
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.75) 100%, rgba(0, 0, 0, 0.75) 100%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.newsletter .container {
+  z-index: 1;
+}
+.newsletter h2 {
+  color: var(--always-white);
+}
+.newsletter form {
+  margin-top: 2rem;
+}
+.newsletter input[type=email] {
+  border-radius: 0.5rem 0 0 0.5rem;
+  flex-grow: 1;
+  max-width: 20rem;
+}
+.newsletter input[type=submit] {
+  height: 50px;
+  border-radius: 0 0.5rem 0.5rem 0;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+}
+.newsletter input[type=submit]:hover {
+  transform: none;
+  background: linear-gradient(to left, var(--primary-color), var(--primary-color));
+}
+
 @media (min-width: 768px) {
   .hero img.bg-main {
     object-fit: unset;
@@ -1042,7 +1101,10 @@ img {
     top: 85%;
   }
   .hero .text {
-    font-size: 3rem;
+    font-size: 1.25rem;
+  }
+  .tours .card__body ul {
+    font-size: 1rem;
   }
 }
 @media (min-width: 900px) {
@@ -1054,9 +1116,9 @@ img {
     top: 83%;
   }
   .hero .text {
-    font-size: 4rem;
-    line-height: 7rem;
-    top: 30%;
+    font-size: 1.5rem;
+    line-height: 4.5rem;
+    top: 40%;
   }
 }
 @media (min-width: 1024px) {
@@ -1064,9 +1126,8 @@ img {
     top: 75%;
   }
   .hero .text {
-    font-size: 4rem;
-    line-height: 10rem;
-    top: 40%;
+    font-size: 2rem;
+    top: 37%;
   }
 }
 

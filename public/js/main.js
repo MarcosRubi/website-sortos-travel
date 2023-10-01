@@ -10,32 +10,6 @@ function toggleShowSubMenu() {
   subMenu.classList.toggle("show");
   icon.classList.toggle("rotate-180");
 }
-function handleOnClickMenuItem() {
-  updateIconDarkTheme();
-}
-function toggleDark() {
-  if (localStorage.getItem("color-theme") === "light") {
-    document.querySelector("html").setAttribute("data-theme", "dark");
-    localStorage.setItem("color-theme", "dark");
-  } else {
-    document.querySelector("html").setAttribute("data-theme", "light");
-    localStorage.setItem("color-theme", "light");
-  }
-  updateIconDarkTheme();
-}
-function updateIconDarkTheme() {
-  const iconMoon = document.getElementById("icon-moon");
-  const iconSun = document.getElementById("icon-sun");
-
-  if (localStorage.getItem("color-theme") === "dark") {
-    iconMoon.classList.add("show");
-    iconSun.classList.remove("show");
-  } else {
-    iconMoon.classList.remove("show");
-    iconSun.classList.add("show");
-  }
-}
-
 function heroStart() {
   const heroSection = document.querySelector(".hero");
   const isHomePage = window.location.pathname === "/";
@@ -86,15 +60,14 @@ document.addEventListener("astro:page-load", () => {
     (!("color-theme" in localStorage) &&
       window.matchMedia("(prefers-color-scheme: dark)").matches)
   ) {
-    document.querySelector("html").setAttribute("data-theme", "dark");
+    document.documentElement.dataset.theme = "dark";
     localStorage.setItem("color-theme", "dark");
   } else {
-    document.querySelector("html").setAttribute("data-theme", "light");
+    document.documentElement.dataset.theme = "light";
     localStorage.setItem("color-theme", "light");
   }
 
   heroStart();
-  updateIconDarkTheme();
 
   const atroposElements = document.querySelectorAll(".my-atropos");
 

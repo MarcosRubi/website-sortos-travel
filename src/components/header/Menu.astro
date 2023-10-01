@@ -1,146 +1,107 @@
 <nav class="menu">
-    <button
-      type="button"
-      class="menu__button inline-flex items-center justify-center"
-      id="menu-hamburguer"
-      onclick="toggleShowMenu(); "
+  <button
+    type="button"
+    class="menu__button inline-flex items-center justify-center"
+    id="menu-hamburguer"
+    onclick="toggleShowMenu(); "
+  >
+    <span class="sr-only">Abrir menú principal</span>
+    <svg
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 17 14"
     >
-      <span class="sr-only">Abrir menú principal</span>
-      <svg
-        aria-hidden="true"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 17 14"
-      >
-        <path
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M1 1h15M1 7h15M1 13h15"></path>
-      </svg>
-    </button>
-    <div
-      class="menu__items absolute"
-      id="menu"
-    >
-      <ul class="flex flex-col-sm mt-1 px-1 font-bold container">
-        <li>
-          <a
-            href="/"
-            onclick="handleOnClickMenuItem();" 
-            class="active"
-            aria-label="Logo Sorto's Travel Multiservices">Inicio</a
+      <path
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M1 1h15M1 7h15M1 13h15"></path>
+    </svg>
+  </button>
+  <div class="menu__items absolute" id="menu">
+    <ul class="flex flex-col-sm mt-1 px-1 font-bold container">
+      <li>
+        <a
+          href="/"
+          class="active"
+          aria-label="Logo Sorto's Travel Multiservices">Inicio</a
+        >
+      </li>
+      <li>
+        <button
+          class="flex items-center justify-between w-full font-bold"
+          onclick="toggleShowSubMenu();"
+          id="icon-submenu"
+          >Servicios
+          <svg
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 10 6"
           >
-        </li>
-        <li>
-          <button
-            class="flex items-center justify-between w-full font-bold"
-            onclick="toggleShowSubMenu();" 
-            id="icon-submenu"
-            >Servicios 
-            <svg
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 10 6"
-            >
-              <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="m1 1 4 4 4-4"></path>
-            </svg></button
-          >
-          <!-- Dropdown menu -->
-          <div
-            class="dropdown-menu "
-            id="submenu"
-          >
-            <ul
-            >
-              <div
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="m1 1 4 4 4-4"></path>
+          </svg></button
+        >
+        <!-- Dropdown menu -->
+        <div class="dropdown-menu" id="submenu">
+          <ul>
+            <div>
+              <li>
+                <a href="/servicios/boletos-aereos">Boletos aéreos</a>
+              </li>
+              <li>
+                <a href="/servicios/paquetes-turisticos">
+                  Paquetes turísticos</a
+                >
+              </li>
+              <li>
+                <a href="/servicios/seguros-de-viaje">Seguros de viaje</a>
+              </li>
+            </div>
+            <div>
+              <li>
+                <a href="/servicios/asesoria-migratoria">Asesoría migratoria</a>
+              </li>
+              <li>
+                <a href="/servicios/tramites-migratorios"
+                  >Trámites migratorios</a
+                >
+              </li>
+              <li>
+                <a href="/servicios/abogado-y-notario"
+                  >Abogado y notario salvadoreño</a
+                >
+              </li>
+            </div>
+            <li>
+              <a href="/servicios/aplicaciones-y-sitios-web"
+                >Aplicaciones y sitios web</a
               >
-                <li>
-                  <a
-                    href="/servicios/boletos-aereos"
-                    onclick="handleOnClickMenuItem();" >Boletos aéreos</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="/servicios/paquetes-turisticos"
-                    onclick="handleOnClickMenuItem();"
-                                         >
-                    Paquetes turísticos</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="/servicios/seguros-de-viaje"
-                    onclick="handleOnClickMenuItem();">Seguros de viaje</a
-                  >
-                </li>
-              </div>
-              <div
+            </li>
+            <li>
+              <a href="/servicios/mantenimiento-web">Mantenimiento web</a>
+            </li>
+            <li>
+              <a href="/servicios/posicionamiento-web"
+                >Posicionamiento web (SEO)</a
               >
-                <li>
-                  <a
-                    href="/servicios/asesoria-migratoria"
-                    onclick="handleOnClickMenuItem();">Asesoría migratoria</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="/servicios/tramites-migratorios"
-                    onclick="handleOnClickMenuItem();"
-                                           >Trámites migratorios</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="/servicios/abogado-y-notario"
-                    onclick="handleOnClickMenuItem();"
-                                           >Abogado y notario salvadoreño</a
-                  >
-                </li>
-              </div>
-              <li>
-                <a
-                  href="/servicios/aplicaciones-y-sitios-web"
-                  onclick="handleOnClickMenuItem();"
-                                       >Aplicaciones y sitios web</a
-                >
-              </li>
-              <li>
-                <a
-                  href="/servicios/mantenimiento-web"
-                  onclick="handleOnClickMenuItem();">Mantenimiento web</a
-                >
-              </li>
-              <li>
-                <a
-                  href="/servicios/posicionamiento-web"
-                  onclick="handleOnClickMenuItem();"
-                                       >Posicionamiento web (SEO)</a
-                >
-              </li>
-            </ul>
-          </div>
-        </li>
-        <li>
-          <a
-            href="/sobre-nosotros"
-            onclick="handleOnClickMenuItem();">Sobre nosotros</a
-          >
-        </li>
-        <li>
-          <a
-            href="/contacto"
-            onclick="handleOnClickMenuItem();">Contacto</a
-          >
-        </li>
-      </ul>
-    </div>
-  </nav>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <a href="/sobre-nosotros">Sobre nosotros</a>
+      </li>
+      <li>
+        <a href="/contacto">Contacto</a>
+      </li>
+    </ul>
+  </div>
+</nav>

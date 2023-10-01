@@ -1,0 +1,28 @@
+---
+import HeaderSections from "../HeaderSections.astro";
+---
+
+<section class="newsletter relative">
+  <div class="gradient"></div>
+  <div class="container flex flex-col justify-center relative">
+    <div class="content">
+      <HeaderSections
+        subtitle="Somos más que una agencia"
+        title="Suscríbete para recibir consejos de viajes, noticias y más!"
+        isTitleFirst={false}
+      />
+    </div>
+    <div class="form w-full">
+      <form
+        action="#"
+        method="POST"
+        onsubmit="return false;"
+      >
+      <div class="flex items-center justify-center w-full ">
+        <input type="email" id="email" placeholder="ejemplo@correo.com" />
+        <input type="submit" value="Suscribirme" class="btn btn-primary" />
+      </div>
+      </form>
+    </div>
+  </div>
+</section>

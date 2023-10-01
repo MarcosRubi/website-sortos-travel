@@ -1,6 +1,5 @@
 .hero {
     min-height: calc(100vh - 80px);
-    margin-top: 80px;
     overflow: hidden;
 
     img,
@@ -72,22 +71,27 @@
     }
 
     .text {
-        z-index: 1;
+        z-index: 10;
         width: 100%;
         text-align: center;
         left: 50%;
-        top: 44%;
+        top: 40%;
         text-transform: uppercase;
         position: absolute;
-        font-size: 1.5rem;
+        font-size: .9rem;
         transform: translate(-50%, -50%);
-        color: #fff;
+        color: var(--always-white);
+        text-shadow: 2px 5px 10px #000;
+
+        span {
+            color: var(--secondary-color);
+        }
     }
 }
 
 .why-ous {
     .grid {
-        grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(21rem, 1fr));
         gap: 2rem;
     }
 
@@ -122,7 +126,8 @@
 
 .tours {
     .grid {
-        grid-template-columns: repeat(auto-fill, minmax(23rem, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
+        gap: 2rem;
     }
 
     .card {
@@ -151,6 +156,7 @@
 
             img {
                 transition: transform .3s ease-in-out;
+                object-fit: cover;
             }
 
             &__footer {
@@ -182,6 +188,7 @@
 
             ul {
                 margin: 0;
+                font-size: 0.9rem;
             }
 
             li {
@@ -220,6 +227,51 @@
     }
 }
 
+.newsletter {
+    padding: 6rem 0;
+    .gradient::after{
+        content: '';
+        background: linear-gradient(0deg, rgba(0,0,0,.75) 100%, rgba(0,0,0,.75) 100%);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    .container{
+        z-index: 1;
+    }
+    background: url('https://assets.website-files.com/62b01487555313003b71f4f1/62b1dcd838a6a72c8af9159e_gaetano-cessati-mlGM03fKONE-unsplash%20(1)%20(1)%20(1)%20(1).jpg');
+
+    h2 {
+        color: var(--always-white);
+    }
+
+    form {
+        margin-top: 2rem;
+    }
+
+    input[type="email"] {
+        border-radius: .5rem 0 0 .5rem;
+        flex-grow: 1;
+        max-width: 20rem;
+    }
+
+    input[type="submit"] {
+        height: 50px;
+        border-radius: 0 .5rem .5rem 0;
+        padding: .5rem .75rem;
+        cursor: pointer;
+
+        &:hover {
+            transform: none;
+            background: linear-gradient(to left, var(--primary-color), var(--primary-color));
+            @extend .shadow;
+        }
+    }
+}
+
 @media (min-width: 768px) {
     .hero {
         img.bg-main {
@@ -231,7 +283,17 @@
         }
 
         .text {
-            font-size: 3rem;
+            font-size: 1.25rem;
+        }
+    }
+
+    .tours {
+        .card {
+            &__body {
+                ul {
+                    font-size: 1rem;
+                }
+            }
         }
     }
 }
@@ -248,11 +310,13 @@
         }
 
         .text {
-            font-size: 4rem;
-            line-height: 7rem;
-            top: 30%;
+            font-size: 1.5rem;
+            line-height: 4.5rem;
+            top: 40%;
         }
     }
+
+
 }
 
 @media (min-width: 1024px) {
@@ -262,9 +326,8 @@
         }
 
         .text {
-            font-size: 4rem;
-            line-height: 10rem;
-            top: 40%;
+            font-size: 2rem;
+            top: 37%;
         }
     }
 }

@@ -32,7 +32,9 @@ const { title } = Astro.props;
   </head>
   <body>
     <Header />
-    <slot />
+    <main>
+      <slot />
+    </main>
     <Footer />
     <script
       src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"

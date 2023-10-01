@@ -125,10 +125,9 @@
     #icon-moon,
     #icon-sun {
         stroke: var(--primary-color);
-        display: none;
 
-        &.show {
-            display: block;
+        &.hide {
+            display: none;
         }
     }
 

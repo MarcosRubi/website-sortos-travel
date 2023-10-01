@@ -52,6 +52,21 @@ img {
     max-width: 100%;
 }
 
+input {
+    max-width: 100%;
+    height: 48px;
+    padding-left: 1rem;
+    outline: none;
+    border: none;
+}
+main{
+    margin-top: 80px;
+}
+
+::placeholder {
+    color: #555;
+}
+
 .flex {
     display: flex;
 }
