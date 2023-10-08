@@ -4,7 +4,7 @@ import HeaderSections from "../HeaderSections.astro";
 
 <section class="newsletter relative">
   <div class="gradient"></div>
-  <div class="container flex flex-col justify-center relative">
+  <div class="container flex flex-col flex-row-lg items-center justify-center relative">
     <div class="content">
       <HeaderSections
         subtitle="Somos más que una agencia"
@@ -18,8 +18,11 @@ import HeaderSections from "../HeaderSections.astro";
         method="POST"
         onsubmit="return false;"
       >
-      <div class="flex items-center justify-center w-full ">
-        <input type="email" id="email" placeholder="ejemplo@correo.com" />
+      <div class="flex items-center justify-center form__content ">
+        <div class="form-group">
+          <input type="email" id="email" required class="w-full"/>
+          <label for="email">Ingresa tu correo</label>
+        </div>
         <input type="submit" value="Suscribirme" class="btn btn-primary" />
       </div>
       </form>
