@@ -246,6 +246,8 @@
     }
 
     background: url('https://assets.website-files.com/62b01487555313003b71f4f1/62b1dcd838a6a72c8af9159e_gaetano-cessati-mlGM03fKONE-unsplash%20(1)%20(1)%20(1)%20(1).jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 
     h2 {
         color: var(--always-white);
@@ -254,14 +256,17 @@
     form {
         margin-top: 2rem;
     }
-    .form__content{
+
+    .form__content {
         max-width: 35rem;
         margin: 0 auto;
     }
-    .form-group{
+
+    .form-group {
         position: relative;
         flex-basis: 60%;
-        label{
+
+        label {
             position: absolute;
             top: 0;
             left: 0;
@@ -273,12 +278,15 @@
             pointer-events: none;
         }
     }
-    
+
     input[type="email"] {
         border-radius: .5rem 0 0 .5rem;
         flex-grow: 1;
-        &:valid ~ label,
-        &:focus ~ label{
+        font-family: $font-title;
+        font-size: 0.9rem;
+
+        &:valid~label,
+        &:focus~label {
             transform: translate(.25rem, -1.25rem);
             color: var(--always-white);
             font-size: .9rem;

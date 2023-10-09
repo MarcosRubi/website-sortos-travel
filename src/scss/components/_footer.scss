@@ -1,0 +1,100 @@
+footer {
+    a {
+        color: var(--primary-color);
+
+    }
+
+    .container {
+        padding-bottom: .5rem;
+    }
+
+    h5 {
+        font-size: 1.25rem;
+        margin: 0;
+    }
+
+    ul {
+        margin: 0 0 1rem 0;
+
+        a {
+            padding: 1rem 0;
+            width: 100%;
+            font-weight: 900;
+            position: relative;
+            display: table-cell;
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0.5rem;
+                left: 50%;
+                transform: translate(-50%, 0%);
+                width: 0%;
+                height: 2px;
+                border-radius: 5rem;
+                background-color: var(--primary-color);
+                transition: width .2s ease-in-out;
+            }
+
+            &:hover::after {
+                width: 100%;
+            }
+        }
+    }
+
+    p {
+        line-height: 1.5;
+    }
+
+    .copy {
+        text-align: center;
+        font-size: 0.9rem;
+    }
+
+    .logo {
+        max-width: 30rem;
+    }
+
+}
+
+@media (min-width:768px) {
+    footer {
+        .grid {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-areas:
+                "logo travel"
+                "logo application"
+                "logo web"
+                "copy copy";
+        }
+
+        .logo {
+            grid-area: logo;
+        }
+
+        .travel {
+            grid-area: travel;
+        }
+
+        .application {
+            grid-area: application;
+        }
+
+        .copy {
+            grid-area: copy;
+        }
+    }
+}
+
+@media (min-width:1024px) {
+    footer {
+        .grid {
+            gap: 2rem;
+            justify-items: first baseline;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            grid-template-areas:
+                "logo logo travel application web"
+                "copy copy copy copy copy";
+        }
+    }
+}

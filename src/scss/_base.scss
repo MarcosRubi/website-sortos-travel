@@ -41,6 +41,7 @@ a {
 a,
 button {
     cursor: pointer;
+
 }
 
 svg {
@@ -59,7 +60,8 @@ input {
     outline: none;
     border: none;
 }
-main{
+
+main {
     margin-top: 80px;
 }
 
@@ -232,6 +234,14 @@ main{
     position: relative;
 }
 
+.logo {
+    svg {
+        width: 6rem;
+        height: 3rem;
+        fill: var(--primary-color);
+    }
+}
+
 @media (min-width:768px) {
     .flex-col-sm {
         flex-direction: row;
@@ -245,6 +255,7 @@ main{
         font-size: 1.75rem;
     }
 }
+
 @media (min-width:1024px) {
     .flex-row-lg {
         flex-direction: row;
