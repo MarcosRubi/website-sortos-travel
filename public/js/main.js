@@ -1,46 +1,45 @@
-function toggleShowMenu() {
-  const menu = document.getElementById("menu");
+function toggleShowMenu () {
+  const menu = document.getElementById('menu')
 
-  menu.classList.toggle("show");
+  menu.classList.toggle('show')
 }
-function toggleShowSubMenu() {
-  const subMenu = document.getElementById("submenu");
-  const icon = document.querySelector("#icon-submenu svg");
+function toggleShowSubMenu () {
+  const subMenu = document.getElementById('submenu')
+  const icon = document.querySelector('#icon-submenu svg')
 
-  subMenu.classList.toggle("show");
-  icon.classList.toggle("rotate-180");
+  subMenu.classList.toggle('show')
+  icon.classList.toggle('rotate-180')
 }
-function heroStart() {
-  const heroSection = document.querySelector(".hero");
-  const isHomePage = window.location.pathname === "/";
-  const isInsideHeroSection = !!heroSection;
+function heroStart () {
+  const heroSection = document.querySelector('.hero')
+  const isInsideHeroSection = !!heroSection
 
-  if (isHomePage && isInsideHeroSection) {
-    const parallaxEl = document.querySelectorAll(".parallax");
+  if (isInsideHeroSection) {
+    const parallaxEl = document.querySelectorAll('.parallax')
 
     if (window.innerWidth >= 728) {
-      heroSection.style.maxHeight = `${window.innerWidth * 0.6}px`;
+      heroSection.style.maxHeight = `${window.innerWidth * 0.6}px`
     } else {
-      heroSection.style.maxHeight = `${window.innerWidth * 1.6}px`;
+      heroSection.style.maxHeight = `${window.innerWidth * 1.6}px`
     }
 
-    let xValue = 0,
-      yValue = 0,
-      rotateDegree = 0;
-    heroSection.addEventListener("mousemove", (e) => {
-      xValue = e.clientX - window.innerWidth / 2;
-      yValue = e.clientY - window.innerHeight / 2;
+    let xValue = 0
+    let yValue = 0
+    let rotateDegree = 0
+    heroSection.addEventListener('mousemove', (e) => {
+      xValue = e.clientX - window.innerWidth / 2
+      yValue = e.clientY - window.innerHeight / 2
 
-      rotateDegree = (xValue / (window.innerWidth / 2)) * 20;
+      rotateDegree = (xValue / (window.innerWidth / 2)) * 20
 
       parallaxEl.forEach((el) => {
-        let speedX = el.dataset.speedx;
-        let speedY = el.dataset.speedy;
-        let speedZ = el.dataset.speedz;
-        let zMove = el.dataset.zvalue;
-        let speedRotation = el.dataset.rotation;
-        let zValue =
-          e.clientX - parseFloat(getComputedStyle(el).left) * parseInt(zMove);
+        const speedX = el.dataset.speedx
+        const speedY = el.dataset.speedy
+        const speedZ = el.dataset.speedz
+        const zMove = el.dataset.zvalue
+        const speedRotation = el.dataset.rotation
+        const zValue =
+          e.clientX - parseFloat(getComputedStyle(el).left) * parseInt(zMove)
 
         el.style.transform = `translateX(calc(-50% + ${
           -xValue * speedX
@@ -48,53 +47,70 @@ function heroStart() {
           yValue * speedY
         }px )) perspective(20000px) translateZ(${zValue * speedZ}px ) rotateY(${
           rotateDegree * speedRotation
-        }deg ) `;
-      });
-    });
+        }deg ) `
+      })
+    })
   }
 }
-
-document.addEventListener("astro:page-load", () => {
+function getThemeSelected () {
   if (
-    localStorage.getItem("color-theme") === "dark" ||
-    (!("color-theme" in localStorage) &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches)
+    window.localStorage.getItem('color-theme') === 'dark' ||
+    (!('color-theme' in localStorage) &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches)
   ) {
-    document.documentElement.dataset.theme = "dark";
-    localStorage.setItem("color-theme", "dark");
+    document.documentElement.dataset.theme = 'dark'
+    window.localStorage.setItem('color-theme', 'dark')
   } else {
-    document.documentElement.dataset.theme = "light";
-    localStorage.setItem("color-theme", "light");
+    document.documentElement.dataset.theme = 'light'
+    window.localStorage.setItem('color-theme', 'light')
   }
+}
+function changeTabToShow (e) {
+  document.querySelector('.tabs .btn.active').classList.remove('active')
+  e.target.classList.add('active')
+}
 
-  heroStart();
+document.addEventListener('astro:page-load', () => {
+  const isHomePage = window.location.pathname === '/'
 
-  const atroposElements = document.querySelectorAll(".my-atropos");
+  if (isHomePage) {
+    const atroposElements = document.querySelectorAll('.my-atropos')
+    const buttonsTabs = document.querySelectorAll('.tabs .btn')
 
-  function initAtropos() {
-    if (window.innerWidth > 1024) {
-      atroposElements.forEach((element) => {
-        Atropos({
-          el: element,
-          activeOffset: 40,
-          shadowScale: 0,
-          onEnter() {
-            element.querySelector(".atropos-inner").classList.remove("shadow");
-            element
-              .querySelector(".atropos-inner")
-              .classList.add("shadow-atropos");
-          },
-          onLeave() {
-            element.querySelector(".atropos-inner").classList.add("shadow");
-            element
-              .querySelector(".atropos-inner")
-              .classList.remove("shadow-atropos");
-          },
-        });
-      });
+    buttonsTabs.forEach(button => {
+      button.addEventListener('click', (e) => {
+        changeTabToShow(e)
+      })
+    })
+
+    function initAtropos () {
+      if (window.innerWidth > 1024) {
+        atroposElements.forEach((element) => {
+          Atropos({
+            el: element,
+            activeOffset: 40,
+            shadowScale: 0,
+            onEnter () {
+              element.querySelector('.atropos-inner').classList.remove('shadow')
+              element
+                .querySelector('.atropos-inner')
+                .classList.add('shadow-atropos')
+            },
+            onLeave () {
+              element.querySelector('.atropos-inner').classList.add('shadow')
+              element
+                .querySelector('.atropos-inner')
+                .classList.remove('shadow-atropos')
+            }
+          })
+        })
+      }
     }
+
+    heroStart()
+    initAtropos()
+    window.addEventListener('resize', initAtropos)
   }
 
-  initAtropos();
-  window.addEventListener("resize", initAtropos);
-});
+  getThemeSelected()
+})

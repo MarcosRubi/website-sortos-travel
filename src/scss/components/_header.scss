@@ -34,7 +34,7 @@
             top: 80px;
             left: 50%;
             transform: translateX(-50%);
-            background-color: var(--bg-color);
+            background-color: var(--bg-color-hover);
             z-index: 99;
             opacity: 0;
             pointer-events: none;
@@ -80,7 +80,7 @@
             position: absolute;
             opacity: 0;
             pointer-events: none;
-            background-color: var(--bg-color);
+            background-color: var(--bg-color-hover);
             width: auto;
             box-shadow: var(--shadow-color) 0px 3px 8px;
 

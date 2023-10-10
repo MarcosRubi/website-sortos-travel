@@ -205,6 +205,13 @@ main {
     }
 }
 
+.btn-secondary {
+    background: transparent;
+    padding: 1rem 1.5rem;
+    color: var(--text-color);
+    border: none;
+}
+
 .text-center {
     text-align: center;
 }

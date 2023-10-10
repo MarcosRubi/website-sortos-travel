@@ -308,6 +308,52 @@
     }
 }
 
+.tabs {
+    &__container {
+        max-width: 800px;
+        margin: 0 auto;
+        border-radius: .5rem;
+
+        &.shadow {
+            box-shadow: var(--shadow-color) 0px 3px 8px;
+        }
+
+        .grid {
+            display: grid;
+            gap: 0;
+            grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+        }
+
+        button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            padding: 1.5rem 4rem;
+            font-family: $font-title;
+            color: var(--soft-white);
+
+            span {
+                letter-spacing: 5px;
+                pointer-events: none;
+            }
+
+            svg {
+                width: 2rem;
+                height: 2rem;
+                padding-bottom: 0.5rem;
+                pointer-events: none;
+            }
+
+            &.active {
+                background: linear-gradient(to left, var(--primary-color-hover), var(--primary-color));
+                color: var(--always-white);
+            }
+
+        }
+    }
+}
+
 @media (min-width: 768px) {
     .hero {
         img.bg-main {
