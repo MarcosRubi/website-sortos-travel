@@ -95,6 +95,11 @@
         gap: 2rem;
     }
 
+    .atropos {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
     .atropos-inner.shadow {
         box-shadow: var(--shadow-color) 0px 7px 29px 0px;
         transition: all .3s;
@@ -102,7 +107,6 @@
 
     .card {
         position: relative;
-        max-width: 500px;
         cursor: pointer;
         color: var(--secondary-color);
 
@@ -309,19 +313,23 @@
 }
 
 .tabs {
-    &__container {
+    nav {
         max-width: 800px;
         margin: 0 auto;
+    }
+
+    &__container {
         border-radius: .5rem;
 
-        &.shadow {
-            box-shadow: var(--shadow-color) 0px 3px 8px;
-        }
+
 
         .grid {
             display: grid;
             gap: 0;
             grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+            margin-bottom: 2rem;
+            max-width: 520px;
+            margin: 2rem auto;
         }
 
         button {
@@ -352,6 +360,42 @@
 
         }
     }
+
+    &__item {
+        background-color: var(--always-white);
+        color: #000;
+        display: none;
+
+        &.active {
+            display: block;
+        }
+    }
+
+    &__img {
+        align-self: stretch;
+
+        img {
+            object-fit: cover;
+        }
+    }
+
+    &__content {
+        padding: 1rem;
+
+        h4 {
+            margin: 1rem 0;
+        }
+
+        p {
+            line-height: 1.5;
+            opacity: .7;
+            max-width: 32rem;
+        }
+    }
+
+    .shadow {
+        box-shadow: var(--shadow-color) 0px 3px 8px;
+    }
 }
 
 @media (min-width: 768px) {
@@ -379,6 +423,18 @@
         }
     }
 
+    .tabs {
+        &__item {
+            .flex {
+                align-items: center;
+            }
+
+            img {
+                min-height: -webkit-fill-available;
+            }
+        }
+    }
+
 }
 
 @media (min-width: 900px) {
@@ -399,6 +455,13 @@
         }
     }
 
+    .tabs {
+        &__container {
+            .grid {
+                max-width: none;
+            }
+        }
+    }
 
 }
 
@@ -411,6 +474,25 @@
         .text {
             font-size: 2rem;
             top: 37%;
+        }
+    }
+
+    .tabs {
+        &__img {
+            flex-basis: 50%;
+        }
+
+        &__content {
+            padding: 1rem 2rem;
+
+            h4 {
+                font-size: 2rem;
+            }
+
+            p {
+                font-size: 1.1rem;
+                max-width: 35rem;
+            }
         }
     }
 }

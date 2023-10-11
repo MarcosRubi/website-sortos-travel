@@ -66,8 +66,13 @@ function getThemeSelected () {
   }
 }
 function changeTabToShow (e) {
+  const tabId = e.target.dataset.tab
+
   document.querySelector('.tabs .btn.active').classList.remove('active')
+  document.querySelector('.tabs__item.active').classList.remove('active')
+
   e.target.classList.add('active')
+  document.getElementById(`tab-${tabId}`).classList.add('active')
 }
 
 document.addEventListener('astro:page-load', () => {

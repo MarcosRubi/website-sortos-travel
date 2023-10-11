@@ -971,13 +971,16 @@ main {
   grid-template-columns: repeat(auto-fill, minmax(21rem, 1fr));
   gap: 2rem;
 }
+.why-ous .atropos {
+  max-width: 500px;
+  margin: 0 auto;
+}
 .why-ous .atropos-inner.shadow, .why-ous .newsletter input.atropos-inner[type=submit]:hover, .newsletter .why-ous input.atropos-inner[type=submit]:hover, .why-ous .atropos-inner.btn-primary:hover {
   box-shadow: var(--shadow-color) 0px 7px 29px 0px;
   transition: all 0.3s;
 }
 .why-ous .card {
   position: relative;
-  max-width: 500px;
   cursor: pointer;
   color: var(--secondary-color);
 }
@@ -1137,18 +1140,20 @@ main {
   background: linear-gradient(to left, var(--primary-color), var(--primary-color));
 }
 
-.tabs__container {
+.tabs nav {
   max-width: 800px;
   margin: 0 auto;
-  border-radius: 0.5rem;
 }
-.tabs__container.shadow, .tabs__container.btn-primary:hover, .newsletter input.tabs__container[type=submit]:hover {
-  box-shadow: var(--shadow-color) 0px 3px 8px;
+.tabs__container {
+  border-radius: 0.5rem;
 }
 .tabs__container .grid {
   display: grid;
   gap: 0;
   grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+  margin-bottom: 2rem;
+  max-width: 520px;
+  margin: 2rem auto;
 }
 .tabs__container button {
   display: flex;
@@ -1173,6 +1178,34 @@ main {
   background: linear-gradient(to left, var(--primary-color-hover), var(--primary-color));
   color: var(--always-white);
 }
+.tabs__item {
+  background-color: var(--always-white);
+  color: #000;
+  display: none;
+}
+.tabs__item.active {
+  display: block;
+}
+.tabs__img {
+  align-self: stretch;
+}
+.tabs__img img {
+  object-fit: cover;
+}
+.tabs__content {
+  padding: 1rem;
+}
+.tabs__content h4 {
+  margin: 1rem 0;
+}
+.tabs__content p {
+  line-height: 1.5;
+  opacity: 0.7;
+  max-width: 32rem;
+}
+.tabs .shadow, .tabs .btn-primary:hover, .tabs .newsletter input[type=submit]:hover, .newsletter .tabs input[type=submit]:hover {
+  box-shadow: var(--shadow-color) 0px 3px 8px;
+}
 
 @media (min-width: 768px) {
   .hero img.bg-main {
@@ -1186,6 +1219,12 @@ main {
   }
   .tours .card__body ul {
     font-size: 1rem;
+  }
+  .tabs__item .flex {
+    align-items: center;
+  }
+  .tabs__item img {
+    min-height: -webkit-fill-available;
   }
 }
 @media (min-width: 900px) {
@@ -1201,6 +1240,9 @@ main {
     line-height: 4.5rem;
     top: 40%;
   }
+  .tabs__container .grid {
+    max-width: none;
+  }
 }
 @media (min-width: 1024px) {
   .hero img.bg-mid {
@@ -1210,6 +1252,22 @@ main {
     font-size: 2rem;
     top: 37%;
   }
+  .tabs__img {
+    flex-basis: 50%;
+  }
+  .tabs__content {
+    padding: 1rem 2rem;
+  }
+  .tabs__content h4 {
+    font-size: 2rem;
+  }
+  .tabs__content p {
+    font-size: 1.1rem;
+    max-width: 35rem;
+  }
+}
+footer {
+  background-color: var(--bg-color-hover);
 }
 footer a {
   color: var(--primary-color);
