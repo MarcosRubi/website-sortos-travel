@@ -1,0 +1,48 @@
+[
+      {
+        "id": 1,
+        "imgUrl": "https://assets.website-files.com/62b01487555313ceec71f525/62c68fb17979bb5d1ed91569_water-3161063_1920%20(1)-p-1080.jpeg",
+        "country": "Zúrich, Suiza",
+        "valoration": 4,
+        "days": 6,
+        "typeTour": "Familiar",
+        "age": 14,
+        "oldPrice": 1200,
+        "price": 900,
+        "description": "Historia, cultura y belleza natural se funden. Su casco antiguo, museos de clase mundial y el relajante lago te esperan. Imperdible en tu viaje por Suiza.",
+        "url": "/tour/zurich-suiza/",
+        "imgBg": "https://content.r9cdn.net/rimg/dimg/73/3d/c8ced6f1-city-16623-162d00ab100.jpg",
+        "isPopular": true
+      },
+      {
+        "id": 2,
+        "imgUrl": "https://assets.website-files.com/62b01487555313ceec71f525/62b592ec9b231ccf93b0daf5_africa-2259939_640-p-500.jpeg",
+        "country": "Playa Brittany Canoe, Madagascar",
+        "valoration": 5,
+        "days": 12,
+        "typeTour": "Exótico",
+        "age": 21,
+        "oldPrice": 1200,
+        "price": 870,
+        "description": "Un rincón paradisíaco para amantes de la naturaleza. Con sus aguas cristalinas, arenas doradas y vida marina diversa, es un paraíso en la Tierra. Descubre la belleza de Madagascar en esta joya costera.",
+        "url": "/tour/playa-brittany-canoe-madagascar",
+        "imgBg": "https://images11.eitb.eus/multimedia/images/2023/07/06/3130918/20230706143247_playa-nosy-be_amp_w1200.jpg",
+        "isPopular": true
+      },
+      {
+        "id": 3,
+        "imgUrl": "https://assets.website-files.com/62b01487555313ceec71f525/62b5900a9b231c319bb0d243_venice-3183168_640-p-500.jpeg",
+        "country": "Venecia, Hermoso Gran Canal, Italia",
+        "valoration": 4,
+        "days": 9,
+        "typeTour": "Romántico",
+        "age": 18,
+        "oldPrice": 1200,
+        "price": 800,
+        "description": "Navega por la historia y la belleza arquitectónica de Italia mientras exploras este icónico río. El Gran Canal de Venecia es una obra de arte en sí mismo. ¡Explora Venecia desde una perspectiva única!",
+        "url": "/tour/venecia-hermoso-gran-canal-italia",
+        "imgBg": "https://blog-italia.com/wp-content/uploads/2022/11/venecia-gondolas-italia.jpg",
+        "isPopular": true
+      }
+    ]
+  

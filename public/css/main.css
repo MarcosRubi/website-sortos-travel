@@ -493,6 +493,11 @@ a {
   text-decoration: none;
 }
 
+p {
+  line-height: 1.5;
+  opacity: 0.8;
+}
+
 a,
 button {
   cursor: pointer;
@@ -532,6 +537,10 @@ main {
   gap: 1rem;
 }
 
+.block {
+  display: block;
+}
+
 .items-center {
   align-items: center;
 }
@@ -568,6 +577,10 @@ main {
   left: 0;
 }
 
+.flex-grow {
+  flex-grow: 1;
+}
+
 .w-full {
   width: 100%;
 }
@@ -593,6 +606,7 @@ main {
   max-width: 1440px;
   margin: 0 auto;
   padding: 3rem 0;
+  z-index: 1;
 }
 
 .flex-wrap {
@@ -629,6 +643,16 @@ main {
 
 .overflow-hidden {
   overflow: hidden;
+}
+
+.gradient::after {
+  content: "";
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.75) 100%, rgba(0, 0, 0, 0.75) 100%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 .btn {
@@ -1070,7 +1094,10 @@ main {
   margin-left: 0.25rem;
 }
 .tours .card__body .description {
-  line-height: 1.5;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
 }
 
 .newsletter {
@@ -1079,17 +1106,7 @@ main {
   background-repeat: no-repeat;
   background-size: cover;
 }
-.newsletter .gradient::after {
-  content: "";
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.75) 100%, rgba(0, 0, 0, 0.75) 100%);
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
 .newsletter .container {
-  z-index: 1;
   gap: 2rem;
 }
 .newsletter h2 {
@@ -1199,7 +1216,6 @@ main {
   margin: 1rem 0;
 }
 .tabs__content p {
-  line-height: 1.5;
   opacity: 0.7;
   max-width: 32rem;
 }
@@ -1266,6 +1282,124 @@ main {
     max-width: 35rem;
   }
 }
+.tour header {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: bottom;
+  min-height: 50vh;
+  display: grid;
+  place-content: center;
+  color: var(--always-white);
+}
+.tour header p {
+  max-width: 1000px;
+  margin: 0 auto;
+  opacity: 1;
+}
+.tour .card {
+  border-radius: 0.25rem;
+  overflow: hidden;
+  order: -1;
+}
+.tour .card__header {
+  padding: 1rem 2rem;
+  background: rgb(0, 153, 57);
+  background: linear-gradient(112deg, var(--primary-color) 28%, var(--primary-color-hover) 100%);
+  color: var(--always-white);
+}
+.tour .card__header h4 {
+  font-family: "Allura", cursive;
+  font-size: 2.5rem;
+  margin: 1rem 0;
+}
+.tour .card__body {
+  padding: 1rem 2rem;
+}
+.tour .card__body h3 {
+  font-family: "Poppins", sans-serif;
+}
+.tour .card__body p {
+  opacity: 0.7;
+  margin: 0.5rem 0 2rem 0;
+}
+.tour .card__body .price {
+  font-size: 1.5rem;
+}
+.tour .card__body .price .old-price {
+  opacity: 0.25;
+  text-decoration: line-through;
+  margin-right: 1rem;
+}
+.tour .card__body .price .new-price {
+  font-weight: 900;
+}
+.tour .card__body .quantity p {
+  margin-bottom: 0;
+}
+.tour .card__body hr {
+  opacity: 0.25;
+  margin: 0.5rem 0;
+}
+.tour .shadow, .tour .btn-primary:hover, .tour .newsletter input[type=submit]:hover, .newsletter .tour input[type=submit]:hover {
+  box-shadow: var(--shadow-color) 0px 7px 29px 0px;
+}
+.tour .container > .flex {
+  flex-direction: column;
+  gap: 1rem;
+}
+.tour__buttons .grid {
+  grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+  gap: 0;
+}
+.tour__buttons nav {
+  background-color: var(--bg-color-hover);
+  margin: 0 auto;
+}
+.tour__buttons .active {
+  color: var(--primary-color);
+}
+.tour__tabs {
+  background-color: var(--bg-color-hover);
+  transform: translateY(-1rem);
+  padding: 1rem;
+  max-width: 800px;
+}
+.tour__tabs h2 {
+  margin: 3rem 0 0 0;
+  font-size: 2rem;
+}
+.tour aside {
+  align-self: center;
+}
+
+@media (min-width: 768px) {
+  .tour header h1 {
+    font-size: 3rem;
+  }
+  .tour header p {
+    font-size: 1.25rem;
+  }
+  .tour__buttons .grid {
+    display: flex;
+  }
+  .tour__buttons nav {
+    margin: initial;
+    max-width: fit-content;
+  }
+}
+@media (min-width: 1024px) {
+  .tour header h1 {
+    font-size: 4rem;
+  }
+  .tour .card {
+    order: initial;
+    max-width: 500px;
+  }
+  .tour .container > .flex {
+    flex-direction: row;
+  }
+}
 footer {
   background-color: var(--bg-color-hover);
 }
@@ -1306,13 +1440,6 @@ footer ul a:hover::after {
 }
 footer p {
   line-height: 1.5;
-}
-footer .copy {
-  text-align: center;
-  font-size: 0.9rem;
-}
-footer .logo {
-  max-width: 30rem;
 }
 
 @media (min-width: 768px) {

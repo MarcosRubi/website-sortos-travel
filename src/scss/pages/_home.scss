@@ -224,7 +224,10 @@
             }
 
             .description {
-                line-height: 1.5;
+                overflow: hidden;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 3;
             }
         }
 
@@ -234,18 +237,7 @@
 .newsletter {
     padding: 6rem 0;
 
-    .gradient::after {
-        content: '';
-        background: linear-gradient(0deg, rgba(0, 0, 0, .75) 100%, rgba(0, 0, 0, .75) 100%);
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-    }
-
     .container {
-        z-index: 1;
         gap: 2rem;
     }
 
@@ -387,7 +379,6 @@
         }
 
         p {
-            line-height: 1.5;
             opacity: .7;
             max-width: 32rem;
         }

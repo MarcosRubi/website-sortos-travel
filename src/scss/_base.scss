@@ -38,6 +38,11 @@ a {
 
 }
 
+p {
+    line-height: 1.5;
+    opacity: .8;
+}
+
 a,
 button {
     cursor: pointer;
@@ -78,6 +83,10 @@ main {
     gap: 1rem;
 }
 
+.block {
+    display: block;
+}
+
 .items-center {
     align-items: center;
 }
@@ -114,6 +123,9 @@ main {
     left: 0;
 }
 
+.flex-grow {
+    flex-grow: 1;
+}
 
 .w-full {
     width: 100%;
@@ -140,6 +152,7 @@ main {
     max-width: 1440px;
     margin: 0 auto;
     padding: 3rem 0;
+    z-index: 1;
 }
 
 .flex-wrap {
@@ -176,6 +189,16 @@ main {
 
 .overflow-hidden {
     overflow: hidden;
+}
+
+.gradient::after {
+    content: '';
+    background: linear-gradient(0deg, rgba(0, 0, 0, .75) 100%, rgba(0, 0, 0, .75) 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 
 .btn {

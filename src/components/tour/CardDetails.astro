@@ -1,0 +1,42 @@
+---
+interface Props {
+    id: number;
+    typeTour: string;
+    description: string;
+    price: number;
+    oldPrice: number;
+}
+
+const { id, typeTour, description, price, oldPrice } = Astro.props;
+---
+
+<aside class="card shadow" transition:name={`card-tour-${id}`}>
+    <div class="card__header text-center">
+        <h4>El viaje de tus sueños</h4>
+    </div>
+    <div class="card__body">
+        <h3>{typeTour}</h3>
+
+        <div class="details">
+            <b>Información adicional</b>
+            <p>{description}</p>
+        </div>
+
+        <div class="price">
+            <b>Precio actual</b>
+            <div class="flex items-center">
+                <p class="old-price">{`$${oldPrice}`}</p>
+                <p class="new-price">{`$${price} USD`}</p>
+            </div>
+        </div>
+
+        <div class="quantity">
+            <b>Cantidad</b>
+            <p>1</p>
+        </div>
+        <hr />
+        <a href="#" class="btn btn-primary block text-center uppercase"
+            >Reservar</a
+        >
+    </div>
+</aside>

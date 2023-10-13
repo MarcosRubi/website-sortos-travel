@@ -1,0 +1,161 @@
+.tour {
+    header {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: bottom;
+        min-height: 50vh;
+        display: grid;
+        place-content: center;
+        color: var(--always-white);
+
+        p {
+            max-width: 1000px;
+            margin: 0 auto;
+            opacity: 1;
+        }
+    }
+
+    .card {
+        border-radius: .25rem;
+        overflow: hidden;
+        order: -1;
+
+        &__header {
+            padding: 1rem 2rem;
+            background: rgb(0, 153, 57);
+            background: linear-gradient(112deg, var(--primary-color) 28%, var(--primary-color-hover) 100%);
+            color: var(--always-white);
+
+            h4 {
+                font-family: $font-subtile;
+                font-size: 2.5rem;
+                margin: 1rem 0;
+            }
+        }
+
+        &__body {
+            padding: 1rem 2rem;
+
+            h3 {
+                font-family: $font-title;
+            }
+
+            p {
+                opacity: .7;
+                margin: .5rem 0 2rem 0;
+            }
+
+            .price {
+                font-size: 1.5rem;
+
+                .old-price {
+                    opacity: .25;
+                    text-decoration: line-through;
+                    margin-right: 1rem;
+                }
+
+                .new-price {
+                    font-weight: 900;
+                }
+            }
+
+            .quantity {
+                p {
+                    margin-bottom: 0;
+                }
+            }
+
+            hr {
+                opacity: 0.25;
+                margin: 0.5rem 0;
+            }
+        }
+    }
+
+    .shadow {
+        box-shadow: var(--shadow-color) 0px 7px 29px 0px;
+    }
+
+    .container>.flex {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    &__buttons {
+        .grid {
+            grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+            gap: 0;
+        }
+
+        nav {
+            background-color: var(--bg-color-hover);
+            margin: 0 auto;
+
+        }
+
+        .active {
+            color: var(--primary-color);
+        }
+    }
+
+    &__tabs {
+        background-color: var(--bg-color-hover);
+        transform: translateY(-1rem);
+        padding: 1rem;
+        max-width: 800px;
+
+        h2 {
+            margin: 3rem 0 0 0;
+            font-size: 2rem;
+        }
+    }
+
+    aside {
+        align-self: center;
+    }
+}
+
+@media (min-width:768px) {
+    .tour {
+        header {
+            h1 {
+                font-size: 3rem;
+            }
+
+            p {
+                font-size: 1.25rem;
+            }
+        }
+
+        &__buttons {
+            .grid {
+                display: flex;
+            }
+
+            nav {
+                margin: initial;
+                max-width: fit-content;
+            }
+        }
+    }
+}
+
+@media (min-width:1024px) {
+    .tour {
+        header {
+            h1 {
+                font-size: 4rem;
+            }
+        }
+
+        .card {
+            order: initial;
+            max-width: 500px;
+        }
+
+        .container>.flex {
+            flex-direction: row;
+        }
+    }
+}

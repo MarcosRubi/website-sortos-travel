@@ -1,5 +1,6 @@
 ---
 interface Props {
+  id: number;
   imgUrl: string;
   country: string;
   valoration: number;
@@ -12,6 +13,7 @@ interface Props {
 }
 
 const {
+  id,
   imgUrl,
   country,
   valoration,
@@ -22,15 +24,16 @@ const {
   description,
   url,
 } = Astro.props;
+
 ---
 
-<div class="card shadow">
+<div class="card shadow" transition:name={`card-tour-${id}`}>
   <a href={url} class="card__header relative">
     <div class="overflow-hidden">
       <img src={imgUrl} alt="" class="flex w-full" />
     </div>
     <div class="absolute card__header__footer">
-      <p>{country}</p>
+      <p transition:name=`title-tour-${id}`>{country}</p>
       <div class="flex items-center">
         <div class="flex items-center stars">
           {
@@ -164,7 +167,7 @@ const {
             cy="7"
             r="4"></circle></svg
         >
-        <span>{typeTour}</span>
+        <span >{typeTour}</span>
       </li>
       <li class="flex items-center justify-center">
         <svg
@@ -192,7 +195,10 @@ const {
         <p>$ {price} USD</p>
         <span>/ Persona</span>
       </div>
-      <p class="text-center description">
+      <p
+        class="text-center description"
+        transition:name={`description-tour-${id}`}
+      >
         {description}
       </p>
       <a href={url} class="flex items-center btn btn-primary inline-flex"
