@@ -65,21 +65,13 @@ function getThemeSelected () {
     window.localStorage.setItem('color-theme', 'light')
   }
 }
-function changeTabToShow (e) {
-  const tabId = e.target.dataset.tab
-
-  document.querySelector('.tabs .btn.active').classList.remove('active')
-  document.querySelector('.tabs__item.active').classList.remove('active')
-
-  e.target.classList.add('active')
-  document.getElementById(`tab-${tabId}`).classList.add('active')
-}
 
 document.addEventListener('astro:page-load', () => {
   const isHomePage = window.location.pathname === '/'
+  const isTourPage = /^\/tour\/.*/.test(window.location.pathname)
 
+  // JS SOLO DEL HOME
   if (isHomePage) {
-    const atroposElements = document.querySelectorAll('.my-atropos')
     const buttonsTabs = document.querySelectorAll('.tabs .btn')
 
     buttonsTabs.forEach(button => {
@@ -88,34 +80,66 @@ document.addEventListener('astro:page-load', () => {
       })
     })
 
-    function initAtropos () {
-      if (window.innerWidth > 1024) {
-        atroposElements.forEach((element) => {
-          Atropos({
-            el: element,
-            activeOffset: 40,
-            shadowScale: 0,
-            onEnter () {
-              element.querySelector('.atropos-inner').classList.remove('shadow')
-              element
-                .querySelector('.atropos-inner')
-                .classList.add('shadow-atropos')
-            },
-            onLeave () {
-              element.querySelector('.atropos-inner').classList.add('shadow')
-              element
-                .querySelector('.atropos-inner')
-                .classList.remove('shadow-atropos')
-            }
-          })
-        })
-      }
+    heroStart()
+    function changeTabToShow (e) {
+      const tabId = e.target.dataset.tab
+
+      document.querySelector('.tabs .btn.active').classList.remove('active')
+      document.querySelector('.tabs__item.active').classList.remove('active')
+
+      e.target.classList.add('active')
+      document.getElementById(`tab-${tabId}`).classList.add('active')
+    }
+  }
+
+  if (isTourPage) {
+    function changeTabToShow (e) {
+      const tabId = e.target.dataset.tab
+
+      document.querySelector('#tabs .btn.active').classList.remove('active')
+      document.querySelector('.tab__item.active').classList.remove('active')
+
+      e.target.classList.add('active')
+      document.getElementById(`tab-${tabId}`).classList.add('active')
     }
 
-    heroStart()
-    initAtropos()
-    window.addEventListener('resize', initAtropos)
+    const buttonsTabs = document.querySelectorAll('#tabs .btn')
+
+    buttonsTabs.forEach(button => {
+      button.addEventListener('click', (e) => {
+        changeTabToShow(e)
+      })
+    })
   }
+
+  // JS GLOBAL
+  const atroposElements = document.querySelectorAll('.my-atropos')
+
+  function initAtropos () {
+    if (window.innerWidth > 1024) {
+      atroposElements.forEach((element) => {
+        Atropos({
+          el: element,
+          activeOffset: 40,
+          shadowScale: 0,
+          onEnter () {
+            element.querySelector('.atropos-inner').classList.remove('shadow')
+            element
+              .querySelector('.atropos-inner')
+              .classList.add('shadow-atropos')
+          },
+          onLeave () {
+            element.querySelector('.atropos-inner').classList.add('shadow')
+            element
+              .querySelector('.atropos-inner')
+              .classList.remove('shadow-atropos')
+          }
+        })
+      })
+    }
+  }
+  initAtropos()
+  window.addEventListener('resize', initAtropos)
 
   getThemeSelected()
 })

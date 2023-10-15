@@ -1,7 +1,7 @@
 ---
 import type { GetStaticPaths } from "astro";
 import Layout from "../../layouts/Layout.astro";
-import dataTour from "../../data/tours.json";
+import dataTours from "../../data/tours.json";
 import CardDetails from "../../components/tour/CardDetails.astro";
 
 const { slug } = Astro.params;
@@ -14,7 +14,7 @@ export const getStaticPaths = (() => {
     ];
 }) satisfies GetStaticPaths;
 
-const tour = dataTour.filter((tour) => tour.url.includes(slug))[0];
+const tour = dataTours.filter((tour) => tour.url.includes(slug))[0];
 const title = `Tour ${tour.country}  | Sorto's Travel Multiservices`;
 ---
 
@@ -80,9 +80,177 @@ const title = `Tour ${tour.country}  | Sorto's Travel Multiservices`;
                             </ul>
                         </nav>
                     </div>
-                    <div class="tour__tabs">
-                        <div id="tab-1">
+                    <div class="tour__tabs flex">
+                        <div class="tab__item active" id="tab-1">
                             <h2>Detalles del tour</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Quasi dolores deleniti nihil
+                                voluptatum necessitatibus.
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Enim laudantium sequi omnis
+                                provident quia, culpa ducimus cum obcaecati!
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit, amet consectetur
+                                adipisicing elit. Quam, quis illo? Magni
+                                delectus quas officia magnam vitae? Dolores quae
+                                totam eveniet voluptas recusandae facere quo.
+                                Quae magnam pariatur doloremque aspernatur.
+                            </p>
+
+                            <h2>Lugar de salida y regreso</h2>
+                            <ul>
+                                <li>
+                                    JFK - Aeropuerto Internacional John F.
+                                    Kennedy
+                                </li>
+                            </ul>
+
+                            <h2>El tour incluye</h2>
+                            <ul>
+                                <li>Alojamiento en hoteles</li>
+                                <li>Traslado desde el aeropuerto</li>
+                                <li>Todas las travesías en la pista</li>
+                                <li>Traslado de equipaje entre hoteles</li>
+                                <li>Todos los desayunos y cenas</li>
+                            </ul>
+
+                            <h2>No incluido</h2>
+                            <ul>
+                                <li>Boletos de avión</li>
+                                <li>Comidas no especificadas en el programa</li>
+                                <li>
+                                    Actividades complementarias (ejemplo: Kayak,
+                                    parapente)
+                                </li>
+                                <li>Entradas</li>
+                            </ul>
+
+                            <h2>Complementario</h2>
+                            <ul>
+                                <li>Botas de lluvia</li>
+                                <li>Astículos de higiene personal</li>
+                                <li>Zapatos cómodos de trekking</li>
+                                <li>Muchas frutas y mariscos</li>
+                            </ul>
+                        </div>
+                        <div class="tab__item" id="tab-2">
+                            <h2>Detalles del tour 2</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Quasi dolores deleniti nihil
+                                voluptatum necessitatibus.
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Enim laudantium sequi omnis
+                                provident quia, culpa ducimus cum obcaecati!
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit, amet consectetur
+                                adipisicing elit. Quam, quis illo? Magni
+                                delectus quas officia magnam vitae? Dolores quae
+                                totam eveniet voluptas recusandae facere quo.
+                                Quae magnam pariatur doloremque aspernatur.
+                            </p>
+
+                            <h2>Lugar de salida y regreso</h2>
+                            <ul>
+                                <li>
+                                    JFK - Aeropuerto Internacional John F.
+                                    Kennedy
+                                </li>
+                            </ul>
+
+                            <h2>El tour incluye</h2>
+                            <ul>
+                                <li>Alojamiento en hoteles</li>
+                                <li>Traslado desde el aeropuerto</li>
+                                <li>Todas las travesías en la pista</li>
+                                <li>Traslado de equipaje entre hoteles</li>
+                                <li>Todos los desayunos y cenas</li>
+                            </ul>
+
+                            <h2>No incluido</h2>
+                            <ul>
+                                <li>Boletos de avión</li>
+                                <li>Comidas no especificadas en el programa</li>
+                                <li>
+                                    Actividades complementarias (ejemplo: Kayak,
+                                    parapente)
+                                </li>
+                                <li>Entradas</li>
+                            </ul>
+
+                            <h2>Complementario</h2>
+                            <ul>
+                                <li>Botas de lluvia</li>
+                                <li>Astículos de higiene personal</li>
+                                <li>Zapatos cómodos de trekking</li>
+                                <li>Muchas frutas y mariscos</li>
+                            </ul>
+                        </div>
+                        <div class="tab__item" id="tab-3">
+                            <h2>Detalles del tour 3</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Quasi dolores deleniti nihil
+                                voluptatum necessitatibus.
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Enim laudantium sequi omnis
+                                provident quia, culpa ducimus cum obcaecati!
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit, amet consectetur
+                                adipisicing elit. Quam, quis illo? Magni
+                                delectus quas officia magnam vitae? Dolores quae
+                                totam eveniet voluptas recusandae facere quo.
+                                Quae magnam pariatur doloremque aspernatur.
+                            </p>
+
+                            <h2>Lugar de salida y regreso</h2>
+                            <ul>
+                                <li>
+                                    JFK - Aeropuerto Internacional John F.
+                                    Kennedy
+                                </li>
+                            </ul>
+
+                            <h2>El tour incluye</h2>
+                            <ul>
+                                <li>Alojamiento en hoteles</li>
+                                <li>Traslado desde el aeropuerto</li>
+                                <li>Todas las travesías en la pista</li>
+                                <li>Traslado de equipaje entre hoteles</li>
+                                <li>Todos los desayunos y cenas</li>
+                            </ul>
+
+                            <h2>No incluido</h2>
+                            <ul>
+                                <li>Boletos de avión</li>
+                                <li>Comidas no especificadas en el programa</li>
+                                <li>
+                                    Actividades complementarias (ejemplo: Kayak,
+                                    parapente)
+                                </li>
+                                <li>Entradas</li>
+                            </ul>
+
+                            <h2>Complementario</h2>
+                            <ul>
+                                <li>Botas de lluvia</li>
+                                <li>Astículos de higiene personal</li>
+                                <li>Zapatos cómodos de trekking</li>
+                                <li>Muchas frutas y mariscos</li>
+                            </ul>
+                        </div>
+                        <div class="tab__item" id="tab-4">
+                            <h2>Detalles del tour 4</h2>
                             <p>
                                 Lorem ipsum dolor sit amet consectetur
                                 adipisicing elit. Quasi dolores deleniti nihil

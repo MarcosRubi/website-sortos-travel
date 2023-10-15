@@ -561,7 +561,7 @@ main {
   position: absolute;
 }
 
-.shadow-atropos, .tours .card:hover {
+.shadow-atropos, .tour .card:hover, .tours .card:hover {
   box-shadow: var(--shadow-color) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 
@@ -1301,6 +1301,10 @@ main {
   border-radius: 0.25rem;
   overflow: hidden;
   order: -1;
+  transition: all 0.3s linear;
+}
+.tour .card:hover {
+  transform: scale(1.05);
 }
 .tour .card__header {
   padding: 1rem 2rem;
@@ -1352,11 +1356,17 @@ main {
   grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
   gap: 0;
 }
+.tour__buttons span {
+  pointer-events: none;
+}
 .tour__buttons nav {
   background-color: var(--bg-color-hover);
   margin: 0 auto;
 }
-.tour__buttons .active {
+.tour__buttons .btn {
+  border-radius: initial;
+}
+.tour__buttons .btn.active {
   color: var(--primary-color);
 }
 .tour__tabs {
@@ -1364,10 +1374,43 @@ main {
   transform: translateY(-1rem);
   padding: 1rem;
   max-width: 800px;
+  overflow: hidden;
 }
 .tour__tabs h2 {
   margin: 3rem 0 0 0;
   font-size: 2rem;
+}
+.tour__tabs .tab__item {
+  min-width: 100%;
+  opacity: 0;
+}
+.tour__tabs #tab-1 {
+  transform: translateX(-200%);
+}
+.tour__tabs #tab-1.active {
+  transform: translateX(0);
+  opacity: 1;
+}
+.tour__tabs #tab-2 {
+  transform: translateX(-200%);
+}
+.tour__tabs #tab-2.active {
+  transform: translateX(-100%);
+  opacity: 1;
+}
+.tour__tabs #tab-3 {
+  transform: translateX(200%);
+}
+.tour__tabs #tab-3.active {
+  transform: translateX(-200%);
+  opacity: 1;
+}
+.tour__tabs #tab-4 {
+  transform: translateX(200%);
+}
+.tour__tabs #tab-4.active {
+  transform: translateX(-300%);
+  opacity: 1;
 }
 .tour aside {
   align-self: center;
