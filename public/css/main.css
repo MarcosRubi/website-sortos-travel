@@ -520,10 +520,6 @@ input {
   border: none;
 }
 
-main {
-  margin-top: 80px;
-}
-
 ::placeholder {
   color: #555;
 }
@@ -724,6 +720,8 @@ main {
   z-index: 50;
   background-color: var(--bg-color);
   color: var(--text-color);
+  position: sticky;
+  top: 0;
 }
 .main-header .logo {
   transition: transform 0.3s ease-in-out;
@@ -1361,11 +1359,10 @@ main {
   font-size: 2rem;
 }
 .tour__tabs .tab__item {
-  min-width: 100%;
   background: var(--bg-color-hover);
   display: none;
   height: max-content;
-  padding: 1rem;
+  padding: 1.3rem;
 }
 .tour__tabs .tab__item.active {
   display: block;
@@ -1377,8 +1374,89 @@ main {
 .tour__tabs .gallery div:hover {
   transform: scale(1.05);
 }
-.tour__tabs #tab-4 {
-  min-width: auto;
+.tour__tabs .accordion .accordion-item:not(:last-child) {
+  border-bottom: 1px solid var(--soft-white);
+}
+.tour__tabs .accordion .accordion-item:not(:last-child) button[aria-expanded=true] {
+  border-bottom: 1px solid var(--primary-color);
+}
+.tour__tabs .accordion button {
+  position: relative;
+  display: block;
+  text-align: left;
+  width: 100%;
+  padding: 1em 0;
+  color: var(--text-color);
+  font-size: 1.15rem;
+  font-weight: 400;
+  border: none;
+  background: none;
+  outline: none;
+}
+.tour__tabs .accordion button:hover, .tour__tabs .accordion button:focus {
+  cursor: pointer;
+  color: var(--primary-color);
+}
+.tour__tabs .accordion button:hover::after, .tour__tabs .accordion button:focus::after {
+  cursor: pointer;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+.tour__tabs .accordion button .accordion-title {
+  padding: 1em 1.5em 1em 0;
+}
+.tour__tabs .accordion button .icon {
+  display: inline-block;
+  position: absolute;
+  top: 18px;
+  right: 0;
+  width: 22px;
+  height: 22px;
+  border: 1px solid;
+  border-radius: 22px;
+}
+.tour__tabs .accordion button .icon::before {
+  display: block;
+  position: absolute;
+  content: "";
+  top: 9px;
+  left: 5px;
+  width: 10px;
+  height: 2px;
+  background: currentColor;
+}
+.tour__tabs .accordion button .icon::after {
+  display: block;
+  position: absolute;
+  content: "";
+  top: 5px;
+  left: 9px;
+  width: 2px;
+  height: 10px;
+  background: currentColor;
+}
+.tour__tabs .accordion button[aria-expanded=true] {
+  color: var(--primary-color);
+}
+.tour__tabs .accordion button[aria-expanded=true] .icon::after {
+  width: 0;
+}
+.tour__tabs .accordion button[aria-expanded=true] + .accordion-content {
+  opacity: 1;
+  max-height: 9em;
+  transition: all 200ms linear;
+  will-change: opacity, max-height;
+}
+.tour__tabs .accordion .accordion-content {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 200ms linear, max-height 200ms linear;
+  will-change: opacity, max-height;
+}
+.tour__tabs .accordion .accordion-content p {
+  font-size: 1rem;
+  font-weight: 300;
 }
 .tour aside {
   align-self: self-start;
@@ -1498,6 +1576,8 @@ footer p {
   }
   .tour aside {
     margin-top: 4.1rem;
+    position: sticky;
+    top: 100px;
   }
 }
 @media (min-width: 1200px) {
