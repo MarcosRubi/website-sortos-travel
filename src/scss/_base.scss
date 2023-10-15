@@ -272,7 +272,7 @@ main {
     }
 }
 
-@media (min-width:768px) {
+@mixin base-768 {
     .flex-col-sm {
         flex-direction: row;
     }
@@ -286,7 +286,7 @@ main {
     }
 }
 
-@media (min-width:1024px) {
+@mixin base-1024 {
     .flex-row-lg {
         flex-direction: row;
     }

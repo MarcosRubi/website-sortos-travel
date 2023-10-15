@@ -116,66 +116,50 @@
     }
 
     &__tabs {
-        background-color: var(--bg-color-hover);
         transform: translateY(-1rem);
-        padding: 1rem;
-        max-width: 800px;
         overflow: hidden;
 
         h2 {
-            margin: 3rem 0 0 0;
             font-size: 2rem;
         }
 
         .tab__item {
             min-width: 100%;
-            opacity: 0;
-        }
-
-        #tab-1 {
-            transform: translateX(-200%);
+            background: var(--bg-color-hover);
+            display: none;
+            height: max-content;
+            padding: 1rem;
 
             &.active {
-                transform: translateX(0);
-                opacity: 1;
+                display: block;
             }
         }
 
-        #tab-2 {
-            transform: translateX(-200%);
 
-            &.active {
-                transform: translateX(-100%);
-                opacity: 1;
-            }
-        }
+        .gallery {
 
-        #tab-3 {
-            transform: translateX(200%);
+            div {
+                padding: 1rem 0;
+                transition: transform .2s ease-in-out;
 
-            &.active {
-                transform: translateX(-200%);
-                opacity: 1;
+                &:hover {
+                    transform: scale(1.05);
+                }
             }
         }
 
         #tab-4 {
-            transform: translateX(200%);
-
-            &.active {
-                transform: translateX(-300%);
-                opacity: 1;
-            }
+            min-width: auto;
         }
 
     }
 
     aside {
-        align-self: center;
+        align-self: self-start;
     }
 }
 
-@media (min-width:768px) {
+@mixin tour-768 {
     .tour {
         header {
             h1 {
@@ -197,10 +181,15 @@
                 max-width: fit-content;
             }
         }
+
+        .gallery {
+            columns: 2;
+        }
+
     }
 }
 
-@media (min-width:1024px) {
+@mixin tour-1024 {
     .tour {
         header {
             h1 {
@@ -215,6 +204,36 @@
 
         .container>.flex {
             flex-direction: row;
+        }
+
+        &__tabs {
+            max-width: 500px;
+        }
+
+        aside {
+            margin-top: 4.1rem;
+        }
+
+    }
+
+}
+
+@mixin tour-1200 {
+    .tour {
+        &__tabs {
+            max-width: 700px;
+        }
+
+        .gallery {
+            columns: 3;
+        }
+    }
+}
+
+@mixin tour-1360 {
+    .tour {
+        &__tabs {
+            max-width: 900px;
         }
     }
 }

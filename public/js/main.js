@@ -1,3 +1,6 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-new */
+/* eslint-disable no-undef */
 function toggleShowMenu () {
   const menu = document.getElementById('menu')
 
@@ -110,6 +113,8 @@ document.addEventListener('astro:page-load', () => {
         changeTabToShow(e)
       })
     })
+
+    new VenoBox()
   }
 
   // JS GLOBAL

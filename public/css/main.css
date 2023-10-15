@@ -720,22 +720,6 @@ main {
   fill: var(--primary-color);
 }
 
-@media (min-width: 768px) {
-  .flex-col-sm {
-    flex-direction: row;
-  }
-  h2 {
-    font-size: 3rem;
-  }
-  h3 {
-    font-size: 1.75rem;
-  }
-}
-@media (min-width: 1024px) {
-  .flex-row-lg {
-    flex-direction: row;
-  }
-}
 .main-header {
   z-index: 50;
   background-color: var(--bg-color);
@@ -1370,79 +1354,36 @@ main {
   color: var(--primary-color);
 }
 .tour__tabs {
-  background-color: var(--bg-color-hover);
   transform: translateY(-1rem);
-  padding: 1rem;
-  max-width: 800px;
   overflow: hidden;
 }
 .tour__tabs h2 {
-  margin: 3rem 0 0 0;
   font-size: 2rem;
 }
 .tour__tabs .tab__item {
   min-width: 100%;
-  opacity: 0;
+  background: var(--bg-color-hover);
+  display: none;
+  height: max-content;
+  padding: 1rem;
 }
-.tour__tabs #tab-1 {
-  transform: translateX(-200%);
+.tour__tabs .tab__item.active {
+  display: block;
 }
-.tour__tabs #tab-1.active {
-  transform: translateX(0);
-  opacity: 1;
+.tour__tabs .gallery div {
+  padding: 1rem 0;
+  transition: transform 0.2s ease-in-out;
 }
-.tour__tabs #tab-2 {
-  transform: translateX(-200%);
-}
-.tour__tabs #tab-2.active {
-  transform: translateX(-100%);
-  opacity: 1;
-}
-.tour__tabs #tab-3 {
-  transform: translateX(200%);
-}
-.tour__tabs #tab-3.active {
-  transform: translateX(-200%);
-  opacity: 1;
+.tour__tabs .gallery div:hover {
+  transform: scale(1.05);
 }
 .tour__tabs #tab-4 {
-  transform: translateX(200%);
-}
-.tour__tabs #tab-4.active {
-  transform: translateX(-300%);
-  opacity: 1;
+  min-width: auto;
 }
 .tour aside {
-  align-self: center;
+  align-self: self-start;
 }
 
-@media (min-width: 768px) {
-  .tour header h1 {
-    font-size: 3rem;
-  }
-  .tour header p {
-    font-size: 1.25rem;
-  }
-  .tour__buttons .grid {
-    display: flex;
-  }
-  .tour__buttons nav {
-    margin: initial;
-    max-width: fit-content;
-  }
-}
-@media (min-width: 1024px) {
-  .tour header h1 {
-    font-size: 4rem;
-  }
-  .tour .card {
-    order: initial;
-    max-width: 500px;
-  }
-  .tour .container > .flex {
-    flex-direction: row;
-  }
-}
 footer {
   background-color: var(--bg-color-hover);
 }
@@ -1509,6 +1450,67 @@ footer p {
     justify-items: first baseline;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     grid-template-areas: "logo logo travel application web" "copy copy copy copy copy";
+  }
+}
+@media (min-width: 768px) {
+  .flex-col-sm {
+    flex-direction: row;
+  }
+  h2 {
+    font-size: 3rem;
+  }
+  h3 {
+    font-size: 1.75rem;
+  }
+  .tour header h1 {
+    font-size: 3rem;
+  }
+  .tour header p {
+    font-size: 1.25rem;
+  }
+  .tour__buttons .grid {
+    display: flex;
+  }
+  .tour__buttons nav {
+    margin: initial;
+    max-width: fit-content;
+  }
+  .tour .gallery {
+    columns: 2;
+  }
+}
+@media (min-width: 1024px) {
+  .flex-row-lg {
+    flex-direction: row;
+  }
+  .tour header h1 {
+    font-size: 4rem;
+  }
+  .tour .card {
+    order: initial;
+    max-width: 500px;
+  }
+  .tour .container > .flex {
+    flex-direction: row;
+  }
+  .tour__tabs {
+    max-width: 500px;
+  }
+  .tour aside {
+    margin-top: 4.1rem;
+  }
+}
+@media (min-width: 1200px) {
+  .tour__tabs {
+    max-width: 700px;
+  }
+  .tour .gallery {
+    columns: 3;
+  }
+}
+@media (min-width: 1360px) {
+  .tour__tabs {
+    max-width: 900px;
   }
 }
 
