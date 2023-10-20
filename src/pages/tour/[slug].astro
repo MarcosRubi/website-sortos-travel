@@ -3,37 +3,27 @@ import type { GetStaticPaths } from "astro";
 import Layout from "../../layouts/Layout.astro";
 import dataTours from "../../data/tours.json";
 import CardDetails from "../../components/tour/CardDetails.astro";
+import Accordion from "../../components/tour/Accordion";
+import BgHeader from "../../components/BgHeader.astro";
 
 const { slug } = Astro.params;
 
 export const getStaticPaths = (() => {
-    return [
-        { params: { slug: "zurich-suiza" } },
-        { params: { slug: "playa-brittany-canoe-madagascar" } },
-        { params: { slug: "venecia-hermoso-gran-canal-italia" } },
-    ];
+    return dataTours.map(tour =>({
+        params: {slug: tour.url},
+    }))
+    
 }) satisfies GetStaticPaths;
+
+
 
 const tour = dataTours.filter((tour) => tour.url.includes(slug))[0];
 const title = `Tour ${tour.country}  | Sorto's Travel Multiservices`;
 ---
 
 <Layout title={title}>
-    <section class="tour relative">
-        <header
-            class="relative text-center"
-            style=`background-image: url(${tour.imgBg});`
-        >
-            <div class="gradient"></div>
-            <div class="container relative">
-                <h1 transition:name={`title-tour-${tour.id}`}>
-                    {tour.country}
-                </h1>
-                <p transition:name={`description-tour-${tour.id}`}>
-                    {tour.description}
-                </p>
-            </div>
-        </header>
+    <section class=" tour relative">
+        <BgHeader title={tour.country} subtitle={tour.description} bgUrl={tour.imgBg} transitionTitleName={`title-tour-${tour.id}` } transitionSubitleName={`description-tour-${tour.id}`} />
         <section class="container">
             <div class="flex">
                 <article class="flex-grow w-full">
@@ -64,14 +54,6 @@ const title = `Tour ${tour.country}  | Sorto's Travel Multiservices`;
                                     <button
                                         class="btn btn-secondary block w-full"
                                         data-tab="3"
-                                    >
-                                        <span class="uppercase">Mapa</span>
-                                    </button>
-                                </li>
-                                <li>
-                                    <button
-                                        class="btn btn-secondary block w-full"
-                                        data-tab="4"
                                     >
                                         <span class="uppercase">Fotos</span
                                         ></button
@@ -139,165 +121,9 @@ const title = `Tour ${tour.country}  | Sorto's Travel Multiservices`;
                         </div>
                         <div class="tab__item" id="tab-2">
                             <h2>Itinerario</h2>
-                            <div class="accordion">
-                                <div class="accordion-item">
-                                    <button
-                                        id="accordion-button-1"
-                                        aria-expanded="false"
-                                        ><span class="accordion-title"
-                                            >Día 1: Llegada y entrada al hotel</span
-                                        ><span class="icon" aria-hidden="true"
-                                        ></span></button
-                                    >
-                                    <div class="accordion-content">
-                                        <p>
-                                            Llegada al destino y entrada al
-                                            hotel. Check-in a las 2:00 PM.
-                                            Disfruta de la comodidad de tu
-                                            habitación y relájate en la piscina
-                                            del hotel.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <button
-                                        id="accordion-button-2"
-                                        aria-expanded="false"
-                                        ><span class="accordion-title"
-                                            >Día 2: Explora el centro histórico</span
-                                        ><span class="icon" aria-hidden="true"
-                                        ></span></button
-                                    >
-                                    <div class="accordion-content">
-                                        <p>
-                                            Comienza el día con un delicioso
-                                            desayuno en el hotel. Luego,
-                                            dirígete al centro histórico de la
-                                            ciudad. Visita la catedral, los
-                                            museos locales y disfruta de la
-                                            comida en un restaurante
-                                            tradicional.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <button
-                                        id="accordion-button-3"
-                                        aria-expanded="false"
-                                        ><span class="accordion-title"
-                                            >Día 3: Aventura al aire libre</span
-                                        ><span class="icon" aria-hidden="true"
-                                        ></span></button
-                                    >
-                                    <div class="accordion-content">
-                                        <p>
-                                            Hoy es el día de aventura. Sal
-                                            temprano para una excursión de
-                                            senderismo en las montañas cercanas.
-                                            Escalarás hasta la cima y
-                                            disfrutarás de vistas panorámicas.
-                                            También puedes nadar en el río en el
-                                            camino de regreso.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <button
-                                        id="accordion-button-4"
-                                        aria-expanded="false"
-                                        ><span class="accordion-title"
-                                            >Día 4: Exploración cultural</span
-                                        ><span class="icon" aria-hidden="true"
-                                        ></span></button
-                                    >
-                                    <div class="accordion-content">
-                                        <p>
-                                            Explora la cultura local visitando
-                                            mercados de artesanía y asistiendo a
-                                            una clase de cocina tradicional. Por
-                                            la tarde, visita un templo histórico
-                                            y conoce la historia del lugar.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <button
-                                        id="accordion-button-5"
-                                        aria-expanded="false"
-                                        ><span class="accordion-title"
-                                            >Día 5: Salida y regreso a casa</span
-                                        ><span class="icon" aria-hidden="true"
-                                        ></span></button
-                                    >
-                                    <div class="accordion-content">
-                                        <p>
-                                            Check-out del hotel a las 12:00 PM.
-                                            Luego, dirígete al aeropuerto para
-                                            tu vuelo de regreso. Guarda tus
-                                            recuerdos y fotos de este
-                                            maravilloso viaje.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
+                            <Accordion client:visible/>
                         </div>
                         <div class="tab__item" id="tab-3">
-                            <h2>Detalles del tour 3</h2>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Quasi dolores deleniti nihil
-                                voluptatum necessitatibus.
-                            </p>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Enim laudantium sequi omnis
-                                provident quia, culpa ducimus cum obcaecati!
-                            </p>
-                            <p>
-                                Lorem ipsum dolor sit, amet consectetur
-                                adipisicing elit. Quam, quis illo? Magni
-                                delectus quas officia magnam vitae? Dolores quae
-                                totam eveniet voluptas recusandae facere quo.
-                                Quae magnam pariatur doloremque aspernatur.
-                            </p>
-
-                            <h2>Lugar de salida y regreso</h2>
-                            <ul>
-                                <li>
-                                    JFK - Aeropuerto Internacional John F.
-                                    Kennedy
-                                </li>
-                            </ul>
-
-                            <h2>El tour incluye</h2>
-                            <ul>
-                                <li>Alojamiento en hoteles</li>
-                                <li>Traslado desde el aeropuerto</li>
-                                <li>Todas las travesías en la pista</li>
-                                <li>Traslado de equipaje entre hoteles</li>
-                                <li>Todos los desayunos y cenas</li>
-                            </ul>
-
-                            <h2>No incluido</h2>
-                            <ul>
-                                <li>Boletos de avión</li>
-                                <li>Comidas no especificadas en el programa</li>
-                                <li>
-                                    Actividades complementarias (ejemplo: Kayak,
-                                    parapente)
-                                </li>
-                                <li>Entradas</li>
-                            </ul>
-
-                            <h2>Complementario</h2>
-                            <ul>
-                                <li>Botas de lluvia</li>
-                                <li>Astículos de higiene personal</li>
-                                <li>Zapatos cómodos de trekking</li>
-                                <li>Muchas frutas y mariscos</li>
-                            </ul>
-                        </div>
-                        <div class="tab__item" id="tab-4">
                             <h2>Fotos de los lugares a visitar</h2>
                             <div class="gallery">
                                 <div>

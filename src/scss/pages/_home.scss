@@ -97,7 +97,6 @@
 
     .atropos {
         max-width: 500px;
-        margin: 0 auto;
     }
 
     .atropos-inner.shadow {
@@ -117,7 +116,6 @@
             border-radius: 50%;
             left: 50%;
             padding: 1rem;
-            margin: 0 auto;
             transform: translate(-50%, -70%);
             background-color: #fff;
         }
@@ -161,6 +159,7 @@
             img {
                 transition: transform .3s ease-in-out;
                 object-fit: cover;
+                height: 18rem;
             }
 
             &__footer {
@@ -232,6 +231,10 @@
         }
 
     }
+    .btn-primary--yellow{
+        display: table;
+        margin: 2rem auto;
+    }
 }
 
 .newsletter {
@@ -242,6 +245,8 @@
     }
 
     background: url('https://assets.website-files.com/62b01487555313003b71f4f1/62b1dcd838a6a72c8af9159e_gaetano-cessati-mlGM03fKONE-unsplash%20(1)%20(1)%20(1)%20(1).jpg');
+    background-attachment: fixed;
+    background-position: bottom;
     background-repeat: no-repeat;
     background-size: cover;
 
@@ -255,38 +260,16 @@
 
     .form__content {
         max-width: 35rem;
-        margin: 0 auto;
     }
 
     .form-group {
-        position: relative;
         flex-basis: 60%;
 
-        label {
-            position: absolute;
-            top: 0;
-            left: 0;
-            transform: translate(1rem, 1rem);
-            z-index: 10;
-            font-size: 1rem;
-            color: #555;
-            transition: all .3s ease-in-out;
-            pointer-events: none;
-        }
     }
 
     input[type="email"] {
         border-radius: .5rem 0 0 .5rem;
         flex-grow: 1;
-        font-family: $font-title;
-        font-size: 0.9rem;
-
-        &:valid~label,
-        &:focus~label {
-            transform: translate(.25rem, -1.25rem);
-            color: var(--always-white);
-            font-size: .9rem;
-        }
     }
 
     input[type="submit"] {
@@ -313,10 +296,7 @@
     &__container {
         border-radius: .5rem;
 
-
-
         .grid {
-            display: grid;
             gap: 0;
             grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
             margin-bottom: 2rem;

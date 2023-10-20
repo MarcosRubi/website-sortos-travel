@@ -1,0 +1,49 @@
+---
+import BgHeader from "../components/BgHeader.astro";
+import CardLocation from "../components/contact/CardLocation.astro";
+import FormContact from "../components/contact/FormContact.astro";
+import Layout from "../layouts/Layout.astro";
+import dataLocations from "../data/locations.json";
+import HeaderSections from "../components/HeaderSections.astro";
+---
+
+<Layout title="Contactar | Sorto's Travel Multiservices">
+    <section class="contact relative">
+        <BgHeader
+            title="Contacta con Soto's Travel Multiservices"
+            subtitle="Estamos aquí para responder tus preguntas y ayudarte con tu viaje."
+            bgUrl="https://img.freepik.com/foto-gratis/paisaje-niebla-matutina-montanas-globos-aerostaticos-al-amanecer_335224-794.jpg?w=1380&t=st=1697696112~exp=1697696712~hmac=097143b2806c78dd4fcf794fef3b4e5f02c1021ac73f9136400624c2ce8e6328"
+            transitionTitleName=""
+            transitionSubitleName=""
+        />
+        <main class="container">
+            <HeaderSections
+                title="Visita nuestras oficinas"
+                subtitle="Te esperamos"
+                isTitleFirst={false}
+            />
+            <div class="locations grid">
+                {
+                    dataLocations.map((location) => {
+                        return (
+                            <CardLocation
+                                img={location.img}
+                                phone={location.phone}
+                                country={location.country}
+                                direction={location.direction}
+                                email={location.email}
+                                url={location.url}
+                            />
+                        );
+                    })
+                }
+            </div>
+            <HeaderSections
+                title="Ponte en contacto"
+                subtitle="Deja un mensaje"
+                isTitleFirst={false}
+            />
+            <FormContact />
+        </main>
+    </section>
+</Layout>

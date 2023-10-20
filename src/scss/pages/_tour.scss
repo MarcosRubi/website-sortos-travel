@@ -1,21 +1,4 @@
 .tour {
-    header {
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-position: bottom;
-        min-height: 50vh;
-        display: grid;
-        place-content: center;
-        color: var(--always-white);
-
-        p {
-            max-width: 1000px;
-            margin: 0 auto;
-            opacity: 1;
-        }
-    }
-
     .card {
         border-radius: .25rem;
         overflow: hidden;
@@ -91,7 +74,7 @@
     &__buttons {
 
         .grid {
-            grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(7rem, 1fr));
             gap: 0;
 
         }
@@ -121,6 +104,16 @@
 
         h2 {
             font-size: 2rem;
+            margin: 0 0 1rem 0;
+            &:not(:first-child){
+            margin: 3rem 0 1rem 0;
+            }
+        }
+        ul{
+            padding-left: 1.25rem;
+        }
+        li{
+            list-style: circle;
         }
 
         .tab__item {
@@ -200,8 +193,8 @@
                         display: block;
                         position: absolute;
                         content: '';
-                        top: 9px;
-                        left: 5px;
+                        top: 10px;
+                        left: 6px;
                         width: 10px;
                         height: 2px;
                         background: currentColor;
@@ -211,8 +204,8 @@
                         display: block;
                         position: absolute;
                         content: '';
-                        top: 5px;
-                        left: 9px;
+                        top: 6px;
+                        left: 10px;
                         width: 2px;
                         height: 10px;
                         background: currentColor;
@@ -261,15 +254,6 @@
 
 @mixin tour-768 {
     .tour {
-        header {
-            h1 {
-                font-size: 3rem;
-            }
-
-            p {
-                font-size: 1.25rem;
-            }
-        }
 
         &__buttons {
             .grid {
@@ -291,12 +275,6 @@
 
 @mixin tour-1024 {
     .tour {
-        header {
-            h1 {
-                font-size: 4rem;
-            }
-        }
-
         .card {
             order: initial;
             max-width: 500px;

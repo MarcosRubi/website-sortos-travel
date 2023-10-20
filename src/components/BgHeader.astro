@@ -1,0 +1,23 @@
+---
+interface Props {
+    bgUrl: string;
+    title: string;
+    subtitle: string;
+    transitionTitleName: string;
+    transitionSubitleName: string;
+}
+
+const { bgUrl, title, subtitle, transitionTitleName, transitionSubitleName } =
+    Astro.props;
+---
+
+<header
+    class="bg-decoration relative text-center"
+    style=`background-image: url(${bgUrl});`
+>
+    <div class="gradient"></div>
+    <div class="container w-full relative">
+        <h1 transition:name={transitionTitleName}>{title}</h1>
+        <p transition:name={transitionSubitleName} class="mx-auto">{subtitle}</p>
+    </div>
+</header>

@@ -28,7 +28,7 @@ const {
 ---
 
 <div class="card shadow" transition:name={`card-tour-${id}`}>
-  <a href={url} class="card__header relative">
+  <a href={`/tour/${url} `} class="card__header relative">
     <div class="overflow-hidden">
       <img src={imgUrl} alt="" class="flex w-full" />
     </div>
@@ -201,7 +201,7 @@ const {
       >
         {description}
       </p>
-      <a href={url} class="flex items-center btn btn-primary inline-flex"
+      <a href={`/tour/${url}`} class="flex items-center btn btn-primary inline-flex"
         ><span>Ver Itinerario</span>
         <svg
           class="w-3.5 h-3.5 ml-2"

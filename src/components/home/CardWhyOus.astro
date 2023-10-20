@@ -8,7 +8,7 @@ interface Props {
 const { title, iconUrl, imgUrl } = Astro.props;
 ---
 
-<div class="atropos my-atropos">
+<div class="atropos my-atropos mx-auto">
   <div class="atropos-scale">
     <div class="atropos-rotate">
       <div class="atropos-inner shadow">
@@ -17,7 +17,7 @@ const { title, iconUrl, imgUrl } = Astro.props;
             <img src={imgUrl} alt="" />
           </div>
           <div class="card__content text-center" data-atropos-offset="5">
-            <div class="card__icon">
+            <div class="card__icon mx-auto">
               <img src={iconUrl} alt="" />
             </div>
             <h4>{title}</h4>

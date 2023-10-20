@@ -1,0 +1,15 @@
+---
+import HeaderSections from "../../HeaderSections.astro";
+import TabsContainer from './TabsContainer.jsx'
+---
+
+<section class='tabs'>
+    <div class='container'>
+      <HeaderSections
+        title='Viajemos todo el año'
+        subtitle='Reserva ahora y obtén un descuento'
+        isTitleFirst={false}
+      /> 
+      <TabsContainer client:only>
+    </div>
+  </section>

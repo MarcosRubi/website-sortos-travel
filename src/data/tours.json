@@ -10,7 +10,7 @@
         "oldPrice": 1200,
         "price": 900,
         "description": "Historia, cultura y belleza natural se funden. Su casco antiguo, museos de clase mundial y el relajante lago te esperan. Imperdible en tu viaje por Suiza.",
-        "url": "/tour/zurich-suiza/",
+        "url": "zurich-suiza/",
         "imgBg": "https://content.r9cdn.net/rimg/dimg/73/3d/c8ced6f1-city-16623-162d00ab100.jpg",
         "isPopular": true
       },
@@ -25,9 +25,9 @@
         "oldPrice": 1200,
         "price": 870,
         "description": "Un rincón paradisíaco para amantes de la naturaleza. Con sus aguas cristalinas, arenas doradas y vida marina diversa, es un paraíso en la Tierra. Descubre la belleza de Madagascar en esta joya costera.",
-        "url": "/tour/playa-brittany-canoe-madagascar",
+        "url": "playa-brittany-canoe-madagascar",
         "imgBg": "https://images11.eitb.eus/multimedia/images/2023/07/06/3130918/20230706143247_playa-nosy-be_amp_w1200.jpg",
-        "isPopular": true
+        "isPopular": false
       },
       {
         "id": 3,
@@ -40,8 +40,53 @@
         "oldPrice": 1200,
         "price": 800,
         "description": "Navega por la historia y la belleza arquitectónica de Italia mientras exploras este icónico río. El Gran Canal de Venecia es una obra de arte en sí mismo. ¡Explora Venecia desde una perspectiva única!",
-        "url": "/tour/venecia-hermoso-gran-canal-italia",
+        "url": "venecia-hermoso-gran-canal-italia",
         "imgBg": "https://blog-italia.com/wp-content/uploads/2022/11/venecia-gondolas-italia.jpg",
+        "isPopular": false
+      },
+      {
+        "id": 4,
+        "imgUrl": "https://i.pinimg.com/736x/32/71/b6/3271b6a4494dff458efc1b8a5bc52aa7.jpg",
+        "country": "París, Francia",
+        "valoration": 5,
+        "days": 7,
+        "typeTour": "Cultural",
+        "age": 25,
+        "oldPrice": 1500,
+        "price": 1200,
+        "description": "La Ciudad de la Luz te espera con su rica historia, arte, moda y gastronomía. Visita el Louvre, la Torre Eiffel y disfruta de croissants en encantadores cafés.",
+        "url": "paris-francia",
+        "imgBg": "https://wallpapercosmos.com/w/full/2/e/8/293782-3840x2160-desktop-4k-paris-background-image.jpg",
+        "isPopular": false
+      },
+      {
+        "id": 5,
+        "imgUrl": "https://img.freepik.com/foto-gratis/vista-aerea-paisaje-urbano-tokio-montana-fuji-japon_335224-148.jpg?w=1380&t=st=1697628175~exp=1697628775~hmac=c1228e92ed6acfbc226f1290ef833c9dc84fc0b0e6261854747d079147e1a39f",
+        "country": "Kyoto, Japón",
+        "valoration": 4,
+        "days": 10,
+        "typeTour": "Cultural",
+        "age": 30,
+        "oldPrice": 1800,
+        "price": 1500,
+        "description": "Sumérgete en la belleza de la cultura japonesa en Kyoto. Visita templos, jardines zen y disfruta de la serenidad de esta histórica ciudad.",
+        "url": "kyoto-japon",
+        "imgBg": "https://img.freepik.com/foto-gratis/flores-cerezo-primavera-pagoda-chureito-montana-fuji-al-atardecer-japon_335224-215.jpg?w=1380&t=st=1697628195~exp=1697628795~hmac=35e12650a7d91331cbcd26474474793c062c8ee65aad01f533c7cd052dcafcbd",
+        "isPopular": true
+      },
+      {
+        "id": 6,
+        "imgUrl": "https://img.freepik.com/foto-gratis/pequeno-pueblo-junto-acantilados-piedra_23-2148249134.jpg?w=1380&t=st=1697628278~exp=1697628878~hmac=5f3bd931a95f9df835ff81712e2147d6ca25d7ecd7ba33d4a518d40063c77a8c",
+        "country": "Ciudad del Cabo, Sudáfrica",
+        "valoration": 5,
+        "days": 8,
+        "typeTour": "Aventura",
+        "age": 28,
+        "oldPrice": 1600,
+        "price": 1300,
+        "description": "Descubre la maravillosa Ciudad del Cabo con sus impresionantes paisajes, vida silvestre y actividades al aire libre. Desde el Parque Nacional Kruger hasta el Cabo de Buena Esperanza, Sudáfrica tiene todo.",
+        "url": "ciudad-del-cabo-sudafrica",
+        "imgBg": "https://img.freepik.com/foto-gratis/fascinante-vista-aerea-isla-gran-canaria-cerca-playa-amadores-agua-cristalina-bahia_181624-49051.jpg?w=1380&t=st=1697628289~exp=1697628889~hmac=983dea66b7bbefb0e687cee3f11b138c5feec48a9b89f711115852daf1f942f2",
         "isPopular": true
       }
     ]

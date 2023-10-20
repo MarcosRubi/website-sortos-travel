@@ -1,18 +1,20 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Hero from "../components/home/Hero.astro";
+import Hero from "../components/home/Hero.jsx";
 import WhyUs from "../components/home/WhyUs.astro";
 import OurVideo from "../components/home/OurVideo.astro";
 import ToursMostPopular from "../components/home/ToursMostPopular.astro";
-import Newsletter from "../components/home/Newsletter.astro";
-import Tabs from "../components/home/Tabs.astro";
+import Newsletter from "../components/Newsletter.astro";
+import Tabs from "../components/home/Tabs/Tabs.astro";
 ---
 
 <Layout title="Inicio | Sorto's Travel Multiservices">
-  <Hero />
-  <WhyUs />
-  <OurVideo />
-  <ToursMostPopular />
-  <Newsletter />
-  <Tabs />
+  <Hero client:visible />
+  <main>
+    <WhyUs />
+    <OurVideo />
+    <ToursMostPopular />
+    <Newsletter />
+    <Tabs />
+  </main>
 </Layout>
