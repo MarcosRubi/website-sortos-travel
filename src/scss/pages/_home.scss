@@ -334,8 +334,7 @@
     }
 
     &__item {
-        background-color: var(--always-white);
-        color: #000;
+        background-color: var(--bg-color-hover);
         display: none;
 
         &.active {
@@ -359,7 +358,6 @@
         }
 
         p {
-            opacity: .7;
             max-width: 32rem;
         }
     }

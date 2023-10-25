@@ -1013,8 +1013,7 @@ textarea:focus ~ label {
   color: var(--always-white);
 }
 .tabs__item {
-  background-color: var(--always-white);
-  color: #000;
+  background-color: var(--bg-color-hover);
   display: none;
 }
 .tabs__item.active {
@@ -1033,7 +1032,6 @@ textarea:focus ~ label {
   margin: 1rem 0;
 }
 .tabs__content p {
-  opacity: 0.7;
   max-width: 32rem;
 }
 .tabs .shadow, .tabs .btn-primary:hover, .tabs .btn-primary--yellow:hover, .tabs .newsletter input[type=submit]:hover, .newsletter .tabs input[type=submit]:hover {
@@ -1307,11 +1305,19 @@ textarea:focus ~ label {
   max-width: 35rem;
   background-color: var(--bg-color-hover);
 }
+.contact .location__item img {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+}
 .contact .location__item ul {
   margin: 2rem 0;
 }
 .contact .location__item li {
   margin: 1.5rem 0;
+}
+.contact .location__item li.phones {
+  flex-direction: column;
 }
 .contact .location__item li svg {
   padding-right: 0.5rem;
@@ -1320,6 +1326,7 @@ textarea:focus ~ label {
 .contact .location__item li a {
   color: var(--text-color);
   transition: color 0.3s ease-in-out;
+  padding: 0.25rem 0;
 }
 .contact .location__item li a:hover {
   color: var(--primary-color);
@@ -1327,7 +1334,7 @@ textarea:focus ~ label {
 .contact .location__item .content {
   padding: 1rem;
 }
-.contact .location__item h2 {
+.contact .location__item h4 {
   margin: 0 0 1rem 0;
 }
 .contact form,
@@ -1369,11 +1376,6 @@ textarea:focus ~ label {
   color: var(--primary-color);
 }
 
-@media (min-width: 768px) {
-  .contact h2 {
-    font-size: 2rem;
-  }
-}
 @media (min-width: 1024px) {
   .contact .grid {
     grid-template-columns: repeat(2, 1fr);
@@ -1396,6 +1398,92 @@ textarea:focus ~ label {
   .contact .form-group:last-child {
     flex-basis: 100%;
     margin: 1rem 0 0 0;
+  }
+  .contact .location__item li.phones {
+    flex-direction: row;
+    gap: 1rem 1.5rem;
+    flex-wrap: wrap;
+  }
+}
+.about-us__container {
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-direction: column;
+  background-color: var(--bg-color-hover);
+  box-shadow: var(--shadow-color) 0px 7px 29px 0px;
+  border-radius: 0.25rem;
+  overflow: hidden;
+}
+.about-us .img-local {
+  align-self: stretch;
+}
+.about-us .img-local img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.about-us__content {
+  padding: 2rem;
+  flex-grow: 1;
+}
+.about-us__content p {
+  max-width: 40rem;
+}
+.about-us__content .social {
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.about-us__content .social .btn svg {
+  padding: 0;
+}
+.about-us__content .social .btn span {
+  display: none;
+}
+.about-us__content .social .icon {
+  fill: #fff;
+}
+.about-us .brands {
+  grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+  justify-items: center;
+  max-width: 1000px;
+  gap: 4rem 3rem;
+  margin: 2rem auto 3rem auto;
+}
+.about-us .brands li {
+  transition: all 0.3s ease-in-out;
+}
+.about-us .brands li:hover {
+  transform: scale(1.15);
+}
+.about-us .brands li svg {
+  height: 100%;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .about-us__container {
+    margin: 1rem 0 6rem 0;
+  }
+  .about-us .img-local {
+    flex-basis: 50%;
+  }
+  .about-us__content .social .btn svg {
+    padding: 0 0.5rem 0 0;
+  }
+  .about-us__content .social .btn span {
+    display: block;
+  }
+}
+@media (min-width: 900px) {
+  .about-us p {
+    font-size: 1.25rem;
+    line-height: 1.5;
+  }
+  .about-us p:first-child {
+    margin-top: 0;
+  }
+  .about-us__container {
+    flex-direction: row;
   }
 }
 footer {
@@ -1476,11 +1564,11 @@ footer p {
   h3 {
     font-size: 1.75rem;
   }
+  p {
+    font-size: 1.1rem;
+  }
   .bg-decoration h1 {
     font-size: 3rem;
-  }
-  .bg-decoration p {
-    font-size: 1.25rem;
   }
   .tour__buttons .grid {
     display: flex;

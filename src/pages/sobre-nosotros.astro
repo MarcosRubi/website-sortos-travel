@@ -1,0 +1,145 @@
+---
+import BgHeader from "../components/BgHeader.astro";
+import Layout from "../layouts/Layout.astro";
+import HeaderSections from "../components/HeaderSections.astro";
+import Newsletter from "../components/Newsletter.astro";
+
+import IconWhatsApp from "../utils/IconWhatsApp.astro";
+import IconFacebook from "../utils/IconFacebook.astro";
+import IconInstagram from "../utils/IconInstagram.astro";
+import IconTikTok from "../utils/IconTikTok.astro";
+
+import IconUniversalAssistance from "../utils/IconUniversalAssistance.astro";
+import IconTravelers from "../utils/IconTravelers.astro";
+import IconAeromexico from "../utils/IconAeromexico.astro";
+import IconAvianca from "../utils/IconAvianca.astro";
+import IconAssisto from "../utils/IconAssisto.astro";
+import IconCopaAirlines from "../utils/IconCopaAirlines.astro";
+import IconDelta from "../utils/IconDelta.astro";
+import IconInterjet from "../utils/IconInterjet.astro";
+import IconVolaris from "../utils/IconVolaris.astro";
+import IconAceAsistance from "../utils/IconAceAsistance.astro";
+---
+
+<Layout title="Sobre nosotros | Sorto's Travel Multiservices">
+    <section class="about-us relative shadow">
+        <BgHeader
+            title="Descubre nuestra historia"
+            subtitle="Estamos aquí para ayudarte con tu viaje."
+            bgUrl="https://img.freepik.com/foto-gratis/paisaje-niebla-matutina-montanas-globos-aerostaticos-al-amanecer_335224-794.jpg?w=1380&t=st=1697696112~exp=1697696712~hmac=097143b2806c78dd4fcf794fef3b4e5f02c1021ac73f9136400624c2ce8e6328"
+            transitionTitleName=""
+            transitionSubitleName=""
+        />
+        <main class="container">
+            <HeaderSections
+                title="Sobre nosotros"
+                subtitle="¿Quienes somos?"
+                isTitleFirst={false}
+            />
+
+            <div class="flex items-center about-us__container shadow">
+                <div class="about-us__content">
+                    <p>
+                        En Sorto’s Travel, somos una de las 5 sucursales,
+                        estamos ubicados en el centro de la ciudad de La Unión.
+                        Nos especializamos en brindar servicios en el área de
+                        migración y turismo, ayudando a la comunidad Latina en
+                        los Estados Unidos con soluciones integrales.
+                    </p>
+                    <p>
+                        Ofrecemos servicios de boletos aéreos, paquetes
+                        turísticos, traducciones, servicios notariales,
+                        preparación de impuestos, procesos migratorios y
+                        asesoría en marketing digital, comprometidos a
+                        simplificar y mejorar la experiencia de nuestros
+                        clientes.
+                    </p>
+                    <ul class="social flex items-center">
+                        <li>
+                            <a
+                                href="/contacto"
+                                class="btn btn-primary inline-flex"
+                            >
+                                <IconWhatsApp />
+                                <span>WhatsApp</span></a
+                            >
+                        </li>
+
+                        <li>
+                            <a
+                                href="/contacto"
+                                class="btn btn-primary inline-flex"
+                            >
+                                <IconFacebook />
+                                <span>Facebook</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="/contacto"
+                                class="btn btn-primary inline-flex"
+                            >
+                                <IconInstagram />
+                                <span>Instagram</span></a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="/contacto"
+                                class="btn btn-primary inline-flex"
+                            >
+                                <IconTikTok />
+                                <span>TikTok</span></a
+                            >
+                        </li>
+                    </ul>
+                </div>
+                <div class="img-local">
+                    <img
+                        src="https://sortostravelmultiservices.com/wp-content/uploads/2023/02/sucursal-la-union.png.webp"
+                        alt=""
+                        class="flex"
+                    />
+                </div>
+            </div>
+            <HeaderSections
+                title="Marcas con las que trabajamos"
+                subtitle="Con la confianza de múltiples marcas"
+                isTitleFirst={false}
+            />
+            <ul class="brands grid items-center">
+                <li>
+                    <IconUniversalAssistance />
+                </li>
+                <li>
+                    <IconTravelers />
+                </li>
+                <li>
+                    <IconAssisto />
+                </li>
+                <li>
+                    <IconAceAsistance />
+                </li>
+                <li>
+                    <IconVolaris />
+                </li>
+                <li>
+                    <IconCopaAirlines />
+                </li>
+                <li>
+                    <IconAvianca />
+                </li>
+                <li>
+                    <IconAeromexico />
+                </li>
+                <li>
+                    <IconInterjet />
+                </li>
+                <li>
+                    <IconDelta />
+                </li>
+            </ul>
+        </main>
+        <Newsletter />
+    </section>
+</Layout>

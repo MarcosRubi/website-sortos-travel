@@ -17,12 +17,21 @@
         max-width: 35rem;
         background-color: var(--bg-color-hover);
 
+        img{
+            width: 100%;
+            max-height: 240px;
+            object-fit: cover;
+        }
+
         ul {
             margin: 2rem 0;
         }
 
         li {
             margin: 1.5rem 0;
+            &.phones{
+                flex-direction: column;
+            }
 
             svg {
                 padding-right: .5rem;
@@ -32,6 +41,7 @@
             a {
                 color: var(--text-color);
                 transition: color .3s ease-in-out;
+                padding: .25rem 0;
 
                 &:hover {
                     color: var(--primary-color)
@@ -43,7 +53,7 @@
             padding: 1rem;
         }
 
-        h2 {
+        h4 {
             margin: 0 0 1rem 0;
         }
 
@@ -91,14 +101,6 @@
     }
 }
 
-@media (min-width:768px) {
-    .contact {
-        h2 {
-            font-size: 2rem;
-        }
-    }
-}
-
 @media (min-width:1024px) {
     .contact {
         .grid {
@@ -122,6 +124,11 @@
                 flex-basis: 100%;
                 margin: 1rem 0 0 0 ;
             }
+        }
+        .location__item li.phones{
+            flex-direction: row;
+            gap: 1rem 1.5rem;
+            flex-wrap: wrap;
         }
     }
 }

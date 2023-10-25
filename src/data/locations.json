@@ -1,18 +1,22 @@
 [
     {
-        "img" : "https://assets.website-files.com/62b01487555313003b71f4f1/62bd48529154f09e16ea79ae_marcin-nowak-iXqTqC-f6jI-unsplash.jpg",
+        "img" : "/images/location-ny.webp",
         "country" : "New York, Estados Unidos",
-        "direction" : "14 Tottenham Road, New York, Estados Unidos",
-        "phone" : "+1 123 456 7890",
-        "email" : "email@email.com",
-        "url" : "#"
+        "direction" : "1519 Islip Ave, Central Islip, NY 11722",
+        "phones" : ["(631) 761 9500", "(631) 452 9140", "(516) 493 6247"],
+        "typePhones" : ["tel", "whatsApp", "tel"],
+        "emails" : ["sortostravellaunion21@gmail.com", "contacto@sortostravelmultiservices.com"],
+        "time" : ["Lunes a Viernes: 8:00AM - 6:00PM", "Sábado: 8:00AM - 12:00PM"], 
+        "url" : "https://maps.google.com/maps?ll=40.778414,-73.215645&z=16&t=m&hl=es-419&gl=US&mapclient=embed&q=1519%20Islip%20Ave%20Central%20Islip%2C%20NY%2011722%20EE.%20UU."
     },
     {
-        "img" : "https://assets.website-files.com/62b01487555313003b71f4f1/62bd48529154f09e16ea79ae_marcin-nowak-iXqTqC-f6jI-unsplash.jpg",
+        "img" : "/images/location-lu.webp",
         "country" : "La Unión, El Salvador",
-        "direction" : "10 Tottenham Road, New York, Estados Unidos",
-        "phone" : "+503 0123 6789",
-        "email" : "email@email.com",
-        "url" : "#"
+        "direction" : "3ra Calle Oriente, Plaza Bahía, local 9",
+        "phones" : ["(631) 761 9500", "(503) 7944 8560", "(503) 2604 1300"],
+        "typePhones" : ["tel", "whatsApp", "tel"],
+        "emails" : ["sortostravellaunion21@gmail.com", "contacto@sortostravelmultiservices.com"],
+        "time" : ["Lunes a Viernes: 8:00AM - 6:00PM", "Sábado: 8:00AM - 12:00PM"],
+        "url" : "https://maps.google.com/maps?ll=13.338208,-87.842216&z=17&t=m&hl=es-419&gl=US&mapclient=embed&cid=5463689457492109108"
     }
 ]
