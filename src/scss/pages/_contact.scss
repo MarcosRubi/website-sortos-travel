@@ -17,7 +17,7 @@
         max-width: 35rem;
         background-color: var(--bg-color-hover);
 
-        img{
+        img {
             width: 100%;
             max-height: 240px;
             object-fit: cover;
@@ -29,9 +29,6 @@
 
         li {
             margin: 1.5rem 0;
-            &.phones{
-                flex-direction: column;
-            }
 
             svg {
                 padding-right: .5rem;
@@ -58,8 +55,9 @@
         }
 
     }
+
     form,
-    .form-content{
+    .form-content {
         max-width: 500px;
     }
 
@@ -70,7 +68,8 @@
         border: 1px solid #eee;
         border-radius: .25rem;
         color: var(--alway-white);
-        &:focus{
+
+        &:focus {
             border: 1px solid var(--primary-color);
             outline: none;
         }
@@ -78,7 +77,8 @@
 
     .form-group {
         margin: 2.5rem 0;
-        &:last-child{
+
+        &:last-child {
             margin: 2.5rem 0 1rem 0;
         }
 
@@ -90,10 +90,11 @@
     input[type="email"],
     input[type="text"],
     textarea {
-        &:valid{
+        &:valid {
             border: 1px solid var(--primary-color);
 
         }
+
         &:valid~label,
         &:focus~label {
             color: var(--primary-color);
@@ -106,29 +107,42 @@
         .grid {
             grid-template-columns: repeat(2, 1fr);
         }
-        form{
+
+        form {
             max-width: 1000px;
             margin: 1rem auto;
         }
-        .form-content{
+
+        .form-content {
             display: flex;
             flex-wrap: wrap;
             max-width: 1000px;
             margin: 1rem auto;
             gap: 0 2rem;
         }
-        .form-group{
+
+        .form-group {
             margin: 1rem 0;
             flex-grow: 1;
-            &:last-child{
+
+            &:last-child {
                 flex-basis: 100%;
-                margin: 1rem 0 0 0 ;
+                margin: 1rem 0 0 0;
             }
         }
-        .location__item li.phones{
+
+        .location__item li.phones {
             flex-direction: row;
             gap: 1rem 1.5rem;
             flex-wrap: wrap;
+        }
+    }
+}
+
+@media (min-width:1200px) {
+    .contact {
+        .location__item {
+            min-width: 30rem;
         }
     }
 }

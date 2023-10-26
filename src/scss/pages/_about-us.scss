@@ -68,7 +68,7 @@
     }
 }
 
-@media (min-width:768px) {
+@mixin about-us-768 {
     .about-us {
         &__container {
             margin: 1rem 0 6rem 0;
@@ -93,7 +93,7 @@
     }
 }
 
-@media (min-width:900px) {
+@mixin about-us-900{
     .about-us {
         p {
             font-size: 1.25rem;

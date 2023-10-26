@@ -49,7 +49,7 @@ footer {
 
 }
 
-@media (min-width:768px) {
+@mixin footer-768 {
     footer {
         .grid {
             grid-template-columns: repeat(2, 1fr);
@@ -78,7 +78,7 @@ footer {
     }
 }
 
-@media (min-width:1024px) {
+@mixin footer-1024 {
     footer {
         .grid {
             gap: 2rem;

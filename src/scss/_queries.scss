@@ -1,11 +1,22 @@
 @media (min-width:768px) {
     @include base-768;
+    @include header-768;
+    @include about-us-768;
+    @include home-768;
     @include tour-768;
+    @include footer-768;
+}
+
+@media (min-width:900px){
+    @include about-us-900;
+    @include home-900;
 }
 
 @media (min-width:1024px) {
     @include base-1024;
     @include tour-1024;
+    @include home-1024;
+    @include footer-1024;
 }
 
 @media (min-width:1200px) {

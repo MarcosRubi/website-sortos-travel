@@ -144,7 +144,7 @@
     }
 }
 
-@media (min-width: 768px) {
+@mixin header-768 {
     .main-header {
         .menu {
             order: initial;

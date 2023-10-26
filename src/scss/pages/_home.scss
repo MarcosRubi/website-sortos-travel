@@ -367,7 +367,7 @@
     }
 }
 
-@media (min-width: 768px) {
+@mixin home-768 {
     .hero {
         img.bg-main {
             object-fit: unset;
@@ -406,7 +406,7 @@
 
 }
 
-@media (min-width: 900px) {
+@mixin home-900 {
     .hero {
         img.bg-front {
             height: initial;
@@ -434,7 +434,7 @@
 
 }
 
-@media (min-width: 1024px) {
+@mixin home-1024 {
     .hero {
         img.bg-mid {
             top: 75%;

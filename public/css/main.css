@@ -689,61 +689,6 @@ textarea:focus ~ label {
   fill: var(--always-white);
 }
 
-@media (min-width: 768px) {
-  .main-header .menu {
-    order: initial;
-  }
-  .main-header .menu__button {
-    display: none;
-  }
-  .main-header .menu__items {
-    position: relative;
-    top: 0;
-    display: block;
-    width: initial;
-    opacity: 1;
-    pointer-events: initial;
-    background: none;
-  }
-  .main-header .menu__items.show {
-    width: initial;
-  }
-  .main-header .menu__items > ul {
-    padding: 0;
-    margin-top: 0;
-    border: none;
-    width: 100%;
-  }
-  .main-header .menu__items > ul a,
-  .main-header .menu__items > ul button {
-    padding: 0.5rem 1.25rem;
-  }
-  .main-header .menu__items > ul a.active,
-  .main-header .menu__items > ul button.active {
-    color: var(--primary-color);
-  }
-  .main-header .menu__items > ul a:hover,
-  .main-header .menu__items > ul button:hover {
-    background-color: transparent;
-  }
-  .main-header .menu .logo {
-    border: none;
-    padding: 0;
-  }
-  .main-header .menu .dropdown-menu {
-    overflow: hidden;
-    border-radius: 0.5rem;
-    transform: translateY(1rem);
-    transition: transform 0.3s ease, opacity 0.3s ease-in-out;
-    padding: 0.5rem 0;
-  }
-  .main-header .menu .dropdown-menu.show {
-    transform: translateY(0);
-  }
-  .main-header .menu .dropdown-menu li:hover {
-    opacity: 0.7;
-  }
-}
 .hero {
   min-height: calc(100vh - 80px);
   overflow: hidden;
@@ -1038,65 +983,6 @@ textarea:focus ~ label {
   box-shadow: var(--shadow-color) 0px 3px 8px;
 }
 
-@media (min-width: 768px) {
-  .hero img.bg-main {
-    object-fit: unset;
-  }
-  .hero img.bg-mid {
-    top: 85%;
-  }
-  .hero .text {
-    font-size: 1.25rem;
-  }
-  .tours .card__body ul {
-    font-size: 1rem;
-  }
-  .tabs__item .flex {
-    align-items: center;
-  }
-  .tabs__item img {
-    min-height: -webkit-fill-available;
-  }
-}
-@media (min-width: 900px) {
-  .hero img.bg-front {
-    height: initial;
-  }
-  .hero img.bg-mid {
-    left: 73%;
-    top: 83%;
-  }
-  .hero .text {
-    font-size: 1.5rem;
-    line-height: 4.5rem;
-    top: 40%;
-  }
-  .tabs__container .grid {
-    max-width: none;
-  }
-}
-@media (min-width: 1024px) {
-  .hero img.bg-mid {
-    top: 75%;
-  }
-  .hero .text {
-    font-size: 2rem;
-    top: 37%;
-  }
-  .tabs__img {
-    flex-basis: 50%;
-  }
-  .tabs__content {
-    padding: 1rem 2rem;
-  }
-  .tabs__content h4 {
-    font-size: 2rem;
-  }
-  .tabs__content p {
-    font-size: 1.1rem;
-    max-width: 35rem;
-  }
-}
 .tour .card {
   border-radius: 0.25rem;
   overflow: hidden;
@@ -1316,9 +1202,6 @@ textarea:focus ~ label {
 .contact .location__item li {
   margin: 1.5rem 0;
 }
-.contact .location__item li.phones {
-  flex-direction: column;
-}
 .contact .location__item li svg {
   padding-right: 0.5rem;
   color: var(--primary-color);
@@ -1405,6 +1288,11 @@ textarea:focus ~ label {
     flex-wrap: wrap;
   }
 }
+@media (min-width: 1200px) {
+  .contact .location__item {
+    min-width: 30rem;
+  }
+}
 .about-us__container {
   gap: 1rem;
   margin-bottom: 3rem;
@@ -1460,32 +1348,6 @@ textarea:focus ~ label {
   width: 100%;
 }
 
-@media (min-width: 768px) {
-  .about-us__container {
-    margin: 1rem 0 6rem 0;
-  }
-  .about-us .img-local {
-    flex-basis: 50%;
-  }
-  .about-us__content .social .btn svg {
-    padding: 0 0.5rem 0 0;
-  }
-  .about-us__content .social .btn span {
-    display: block;
-  }
-}
-@media (min-width: 900px) {
-  .about-us p {
-    font-size: 1.25rem;
-    line-height: 1.5;
-  }
-  .about-us p:first-child {
-    margin-top: 0;
-  }
-  .about-us__container {
-    flex-direction: row;
-  }
-}
 footer {
   background-color: var(--bg-color-hover);
 }
@@ -1529,6 +1391,114 @@ footer p {
 }
 
 @media (min-width: 768px) {
+  .flex-col-sm {
+    flex-direction: row;
+  }
+  h2 {
+    font-size: 3rem;
+  }
+  h3 {
+    font-size: 1.75rem;
+  }
+  p {
+    font-size: 1.1rem;
+  }
+  .bg-decoration h1 {
+    font-size: 3rem;
+  }
+  .main-header .menu {
+    order: initial;
+  }
+  .main-header .menu__button {
+    display: none;
+  }
+  .main-header .menu__items {
+    position: relative;
+    top: 0;
+    display: block;
+    width: initial;
+    opacity: 1;
+    pointer-events: initial;
+    background: none;
+  }
+  .main-header .menu__items.show {
+    width: initial;
+  }
+  .main-header .menu__items > ul {
+    padding: 0;
+    margin-top: 0;
+    border: none;
+    width: 100%;
+  }
+  .main-header .menu__items > ul a,
+  .main-header .menu__items > ul button {
+    padding: 0.5rem 1.25rem;
+  }
+  .main-header .menu__items > ul a.active,
+  .main-header .menu__items > ul button.active {
+    color: var(--primary-color);
+  }
+  .main-header .menu__items > ul a:hover,
+  .main-header .menu__items > ul button:hover {
+    background-color: transparent;
+  }
+  .main-header .menu .logo {
+    border: none;
+    padding: 0;
+  }
+  .main-header .menu .dropdown-menu {
+    overflow: hidden;
+    border-radius: 0.5rem;
+    transform: translateY(1rem);
+    transition: transform 0.3s ease, opacity 0.3s ease-in-out;
+    padding: 0.5rem 0;
+  }
+  .main-header .menu .dropdown-menu.show {
+    transform: translateY(0);
+  }
+  .main-header .menu .dropdown-menu li:hover {
+    opacity: 0.7;
+  }
+  .about-us__container {
+    margin: 1rem 0 6rem 0;
+  }
+  .about-us .img-local {
+    flex-basis: 50%;
+  }
+  .about-us__content .social .btn svg {
+    padding: 0 0.5rem 0 0;
+  }
+  .about-us__content .social .btn span {
+    display: block;
+  }
+  .hero img.bg-main {
+    object-fit: unset;
+  }
+  .hero img.bg-mid {
+    top: 85%;
+  }
+  .hero .text {
+    font-size: 1.25rem;
+  }
+  .tours .card__body ul {
+    font-size: 1rem;
+  }
+  .tabs__item .flex {
+    align-items: center;
+  }
+  .tabs__item img {
+    min-height: -webkit-fill-available;
+  }
+  .tour__buttons .grid {
+    display: flex;
+  }
+  .tour__buttons nav {
+    margin: initial;
+    max-width: fit-content;
+  }
+  .tour .gallery {
+    columns: 2;
+  }
   footer .grid {
     grid-template-columns: repeat(2, 1fr);
     grid-template-areas: "logo travel" "logo application" "logo web" "copy copy";
@@ -1546,39 +1516,31 @@ footer p {
     grid-area: copy;
   }
 }
-@media (min-width: 1024px) {
-  footer .grid {
-    gap: 2rem;
-    justify-items: first baseline;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    grid-template-areas: "logo logo travel application web" "copy copy copy copy copy";
+@media (min-width: 900px) {
+  .about-us p {
+    font-size: 1.25rem;
+    line-height: 1.5;
   }
-}
-@media (min-width: 768px) {
-  .flex-col-sm {
+  .about-us p:first-child {
+    margin-top: 0;
+  }
+  .about-us__container {
     flex-direction: row;
   }
-  h2 {
-    font-size: 3rem;
+  .hero img.bg-front {
+    height: initial;
   }
-  h3 {
-    font-size: 1.75rem;
+  .hero img.bg-mid {
+    left: 73%;
+    top: 83%;
   }
-  p {
-    font-size: 1.1rem;
+  .hero .text {
+    font-size: 1.5rem;
+    line-height: 4.5rem;
+    top: 40%;
   }
-  .bg-decoration h1 {
-    font-size: 3rem;
-  }
-  .tour__buttons .grid {
-    display: flex;
-  }
-  .tour__buttons nav {
-    margin: initial;
-    max-width: fit-content;
-  }
-  .tour .gallery {
-    columns: 2;
+  .tabs__container .grid {
+    max-width: none;
   }
 }
 @media (min-width: 1024px) {
@@ -1602,6 +1564,32 @@ footer p {
     margin-top: 4.1rem;
     position: sticky;
     top: 100px;
+  }
+  .hero img.bg-mid {
+    top: 75%;
+  }
+  .hero .text {
+    font-size: 2rem;
+    top: 37%;
+  }
+  .tabs__img {
+    flex-basis: 50%;
+  }
+  .tabs__content {
+    padding: 1rem 2rem;
+  }
+  .tabs__content h4 {
+    font-size: 2rem;
+  }
+  .tabs__content p {
+    font-size: 1.1rem;
+    max-width: 35rem;
+  }
+  footer .grid {
+    gap: 2rem;
+    justify-items: first baseline;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-areas: "logo logo travel application web" "copy copy copy copy copy";
   }
 }
 @media (min-width: 1200px) {
