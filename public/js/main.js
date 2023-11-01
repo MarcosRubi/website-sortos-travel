@@ -1,31 +1,6 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-new */
 /* eslint-disable no-undef */
-function toggleShowMenu () {
-  const menu = document.getElementById('menu')
-
-  menu.classList.toggle('show')
-}
-function toggleShowSubMenu () {
-  const subMenu = document.getElementById('submenu')
-  const icon = document.querySelector('#icon-submenu svg')
-
-  subMenu.classList.toggle('show')
-  icon.classList.toggle('rotate-180')
-}
-function getThemeSelected () {
-  if (
-    window.localStorage.getItem('color-theme') === 'dark' ||
-    (!('color-theme' in localStorage) &&
-      window.matchMedia('(prefers-color-scheme: dark)').matches)
-  ) {
-    document.documentElement.dataset.theme = 'dark'
-    window.localStorage.setItem('color-theme', 'dark')
-  } else {
-    document.documentElement.dataset.theme = 'light'
-    window.localStorage.setItem('color-theme', 'light')
-  }
-}
 
 document.addEventListener('astro:page-load', () => {
   const isTourPage = /^\/tour\/.*/.test(window.location.pathname)
@@ -80,6 +55,4 @@ document.addEventListener('astro:page-load', () => {
   }
   initAtropos()
   window.addEventListener('resize', initAtropos)
-
-  getThemeSelected()
 })
