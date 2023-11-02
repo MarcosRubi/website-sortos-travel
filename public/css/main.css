@@ -622,6 +622,10 @@ textarea:focus ~ label {
   padding: 0.75rem;
   color: var(--text-color);
 }
+.main-header .menu__items > ul a.active,
+.main-header .menu__items > ul button.active {
+  color: var(--primary-color);
+}
 .main-header .menu__items > ul a:hover,
 .main-header .menu__items > ul button:hover {
   color: var(--primary-color);
@@ -1433,10 +1437,6 @@ footer p {
   .main-header .menu__items > ul a,
   .main-header .menu__items > ul button {
     padding: 0.5rem 1.25rem;
-  }
-  .main-header .menu__items > ul a.active,
-  .main-header .menu__items > ul button.active {
-    color: var(--primary-color);
   }
   .main-header .menu__items > ul a:hover,
   .main-header .menu__items > ul button:hover {

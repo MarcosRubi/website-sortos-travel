@@ -57,7 +57,10 @@
                 button {
                     padding: 0.75rem;
                     color: var(--text-color);
-
+                    
+                    &.active {
+                        color: var(--primary-color);
+                    }
                     &:hover {
                         color: var(--primary-color);
                     }
@@ -176,9 +179,7 @@
                     button {
                         padding: .5rem 1.25rem;
 
-                        &.active {
-                            color: var(--primary-color);
-                        }
+                        
 
                         &:hover {
                             background-color: transparent;

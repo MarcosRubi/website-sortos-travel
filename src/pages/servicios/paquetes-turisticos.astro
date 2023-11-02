@@ -7,40 +7,37 @@ import dataTours from "../../data/tours.json";
 import BgHeader from "../../components/BgHeader.astro";
 ---
 
-<Layout title="Pauetes turísticos | Sorto's Travel Multiservices">
+<Layout title="Paquetes turísticos | Sorto's Travel Multiservices">
   <section class="tours">
     <BgHeader
-            title="Descubre nuestros emocionantes paquetes turísticos"
-            subtitle="Explora el mundo con paquetes personalizados. Tu próxima aventura te espera."
-            bgUrl="https://img.freepik.com/foto-gratis/paisaje-niebla-matutina-montanas-globos-aerostaticos-al-amanecer_335224-794.jpg?w=1380&t=st=1697696112~exp=1697696712~hmac=097143b2806c78dd4fcf794fef3b4e5f02c1021ac73f9136400624c2ce8e6328"
-            transitionTitleName=""
-            transitionSubitleName=""
-        />
+      title="Descubre nuestros emocionantes paquetes turísticos"
+      subtitle="Explora el mundo con paquetes personalizados. Tu próxima aventura te espera."
+      bgUrl="https://img.freepik.com/foto-gratis/paisaje-niebla-matutina-montanas-globos-aerostaticos-al-amanecer_335224-794.jpg?w=1380&t=st=1697696112~exp=1697696712~hmac=097143b2806c78dd4fcf794fef3b4e5f02c1021ac73f9136400624c2ce8e6328"
+      transitionTitleName=""
+      transitionSubitleName=""
+    />
     <main class="container">
       <div class="grid mt-1 justify-center">
         {
-          dataTours
-            .map((tour) => {
-              return (
-                <CardTourPopular
-                  id={tour.id}
-                  imgUrl={tour.imgUrl}
-                  country={tour.country}
-                  valoration={tour.valoration}
-                  days={tour.days}
-                  typeTour={tour.typeTour}
-                  age={tour.age}
-                  price={tour.price}
-                  description={tour.description}
-                  url={tour.url}
-                />
-              );
-            })
+          dataTours.map((tour) => {
+            return (
+              <CardTourPopular
+                id={tour.id}
+                imgUrl={tour.imgUrl}
+                country={tour.country}
+                valoration={tour.valoration}
+                days={tour.days}
+                typeTour={tour.typeTour}
+                age={tour.age}
+                price={tour.price}
+                description={tour.description}
+                url={tour.url}
+              />
+            );
+          })
         }
       </div>
     </main>
   </section>
-  <Newsletter/>
+  <Newsletter />
 </Layout>
-
-
